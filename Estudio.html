@@ -1,12 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Estudio | Ruiz de la Prada</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Exo+2:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-    
+
+    <!-- ================= HEADER ================= -->
+    <header id="header-estudio">
+
+        <h1 id="titulo-header-estudio">ESTUDIO</h1>
+
+        <button id="menu-hamburguesa" aria-label="Menú">
+            ☰
+        </button>
+
+    </header>
+
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+    <main id="contenido-principal" class="container">
+
+        <!-- ===== Sección presentación ===== -->
+        <section id="seccion-presentacion-estudio" class="row">
+
+            <article class="col-md-4 bloque-imagen-principal">
+                <img src="img/imgBiog.jpg" alt="Imagen del estudio" class="imagen-bio">
+                <p class="texto-pie-imagen">Descripción técnica</p>
+            </article>
+
+            <article class="col-md-8 bloque-texto-biografia">
+                <h2 class="titulo-seccion">SOBRE MI</h2>
+                <p class="texto-descriptivo">
+                    Gonzalo Ruiz de la Prada Font de Mora es un arquitecto con una trayectoria amplia y diversa, que
+                    combina más de veinticinco años de práctica profesional con una intensa participación en proyectos
+                    nacionales e internacionales de muy distinta escala, desde viviendas unifamiliares hasta grandes
+                    desarrollos urbanos y equipamientos públicos complejos. Su perfil se caracteriza por una sólida
+                    formación técnica, una clara vocación por el diseño arquitectónico y urbano, y una capacidad
+                    acreditada para coordinar equipos y gestionar proyectos con miles de metros cuadrados edificados.
+                    A lo largo de su vida profesional ha acumulado más de 800 obras visadas en el Colegio Oficial de
+                    Arquitectos de la Comunidad Valenciana, un dato que refleja tanto volumen como continuidad en el
+                    ejercicio de la profesión.
+                    En la actualidad, dirije su propio estudio, Ruiz de la Prada Arquitectos, donde ha consolidado una
+                    fuerte especialización en edificios de alto standing. Su actividad reciente se concentra en zonas de
+                    alta demanda y exigencia como Boadilla del Monte, Pozuelo de Alarcón, Las Rozas y Xàbia,
+                    desarrollando proyectos que requieren un equilibrio perfecto entre diseño exclusivo, calidades
+                    premium y ejecución técnica impecable.
+
+                </p>
+            </article>
+
+        </section>
+
+        <!-- ===== Sección galería ===== -->
+        <section id="seccion-galeria-estudio" class="row">
+
+            <article class="col-md-4 item-galeria">
+                <img src="img/placeholder.jpg" alt="Proyecto 1" class="imagen-estudio">
+            </article>
+
+            <article class="col-md-4 item-galeria">
+                <img src="img/placeholder.jpg" alt="Proyecto 2" class="imagen-estudio">
+            </article>
+
+            <article class="col-md-4 item-galeria">
+                <img src="img/placeholder.jpg" alt="Proyecto 3" class="imagen-estudio">
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="footer-principal">
+        <p>© Ruiz de la Prada – Estudio de Arquitectura</p>
+    </footer>
+
 </body>
+
 </html>

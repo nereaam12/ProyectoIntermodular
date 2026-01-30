@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Exo2";
+  src: url(fonts/Exo_2/Exo2-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Inter";
+  src: url(fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+h1 {
+  font-family: "Inter";
+  font-weight: bolder;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter";
+}
+
+.cards {
+  font-family: "Exo2";
+}

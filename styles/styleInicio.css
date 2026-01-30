@@ -1,0 +1,53 @@
+/* =================================================
+   INDEX / HOME (encapsulado)
+   ================================================= */
+
+.page-index {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Hero */
+.page-index .index-hero {
+    border-bottom: 1px solid #000;
+}
+
+.page-index .index-title {
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.page-index .index-subtitle {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+/* Main */
+.page-index .index-main {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.page-index .index-section {
+    margin-bottom: 120px;
+}
+
+.page-index .index-section-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+/* Imágenes */
+.page-index .index-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border: 1px solid #000;
+}
+
+/* Footer */
+.page-index .index-footer {
+    border-top: 1px solid #000;
+}

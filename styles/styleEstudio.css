@@ -14,7 +14,8 @@ body {
 
     background-image: url("../img/oficina.png");
     background-size: cover;
-    background-position: center 70%;;
+    background-position: center 70%;
+    ;
     background-repeat: no-repeat;
 
     display: flex;

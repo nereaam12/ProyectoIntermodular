@@ -1,13 +1,8 @@
-/* =================================================
-   INDEX / HOME (encapsulado)
-   ================================================= */
-
 .page-index {
     background: #ffffff;
     color: #000000;
 }
 
-/* Hero */
 .page-index .index-hero {
     border-bottom: 1px solid #000;
 }
@@ -23,7 +18,6 @@
     font-size: 14px;
 }
 
-/* Main */
 .page-index .index-main {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -39,7 +33,6 @@
     margin-bottom: 40px;
 }
 
-/* Imágenes */
 .page-index .index-img {
     width: 100%;
     height: 260px;
@@ -47,7 +40,6 @@
     border: 1px solid #000;
 }
 
-/* Footer */
 .page-index .index-footer {
     border-top: 1px solid #000;
 }

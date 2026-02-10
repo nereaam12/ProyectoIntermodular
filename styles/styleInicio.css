@@ -35,6 +35,7 @@ header {
     font-size: 900%;
     letter-spacing: 1px;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .page-index .index-img {
@@ -47,3 +48,60 @@ header {
 .page-index .index-footer {
     border-top: 1px solid #000;
 }
+
+.proyecto-card:hover .proyecto-img {
+    transform: scale(1.03);
+}
+
+.proyecto-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.proyecto-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 18px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.0) 60%);
+    opacity: 0;
+    transition: opacity 200ms ease;
+}
+
+.proyecto-img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+    transition: transform 250ms ease;
+}
+
+.proyecto-card {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    border: 1px solid #000;
+    border-radius: 0;
+    background: #fff;
+}
+
+.proyecto-meta {
+    margin: 6px 0 0 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Courier New', monospace;
+}
+
+.proyecto-card:hover .proyecto-overlay,
+.proyecto-card:focus-visible .proyecto-overlay {
+    opacity: 1;
+}
+
+

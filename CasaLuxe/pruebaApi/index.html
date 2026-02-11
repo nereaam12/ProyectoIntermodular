@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Proyectos</title>
+</head>
+<body>
+
+<h2>Crear Proyecto</h2>
+
+<form id="formulario">
+    <input type="text" id="titulo" placeholder="Título" required><br><br>
+    <textarea id="descripcion" placeholder="Descripción" required></textarea><br><br>
+    <input type="file" id="imagen" accept="image/*" required><br><br>
+    <button type="submit">Enviar</button>
+</form>
+
+<h2>Proyectos Guardados</h2>
+<div id="contenedor"></div>
+
+<script>
+    const form = document.getElementById("formulario");
+    const inputImagen = document.getElementById("imagen");
+    const contenedor = document.getElementById("contenedor");
+
+    // Enviar formulario
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+        const file = inputImagen.files[0];
+        if (!file) return alert("Selecciona una imagen");
+
+        const reader = new FileReader();
+        reader.onload = async function() {
+            const base64 = reader.result; // Base64 con prefijo data:image/...
+
+            const payload = {
+                title: document.getElementById("titulo").value,
+                description: document.getElementById("descripcion").value,
+                image: base64
+            };
+
+            try {
+                const res = await fetch("http://localhost:8000/api/projects", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!res.ok) {
+                    const text = await res.text();
+                    throw new Error("Error al guardar: " + text);
+                }
+
+                form.reset();
+                cargarProyectos();
+            } catch(err) {
+                alert(err);
+            }
+        };
+        reader.readAsDataURL(file);
+    });
+
+    // Cargar proyectos y mostrarlos
+    async function cargarProyectos(){
+        try {
+            const res = await fetch("http://localhost:8000/api/projects");
+            if (!res.ok) throw new Error("Error al obtener proyectos");
+            const data = await res.json();
+
+            contenedor.innerHTML = "";
+            data.forEach(p => {
+                const div = document.createElement("div");
+                div.innerHTML = `
+                <h3>${p.title}</h3>
+                <p>${p.description}</p>
+                <img src="${p.image}" width="200"><hr>
+            `;
+                contenedor.appendChild(div);
+            });
+        } catch(err) {
+            contenedor.innerHTML = "<p>Error cargando proyectos</p>";
+        }
+    }
+
+    cargarProyectos();
+</script>
+
+</body>
+</html>

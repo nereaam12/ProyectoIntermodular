@@ -1,0 +1,87 @@
+/* fuentes */
+@font-face {
+  font-family: 'Exo2';
+  src: url('../fonts/Exo_2/Exo2-VariableFont_wght.ttf');
+}
+@font-face{
+  font-family: 'Inter';
+  src: url('../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf');
+}
+.fontcard{
+  font-family: 'Courier New', Courier, monospaces;
+}
+.titles{
+  font-family: 'Inter';
+  font-weight: bold;
+}
+.subtitles{
+  font-family: 'Inter';
+}
+.decoration{
+  font-family: 'Exo2';
+}
+/* Jumbotron */
+.jumbotron {
+  background-image: url("../img/proyectos/2.png");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+.color-border{
+  border-bottom: 1px solid #0fa958;
+}
+.jumbotron .btn-outline-light{
+  background-color: #0fa958;
+}
+.btn-outline-light{
+  background-color: #0fa958;
+}
+.btn-outline-light:hover {
+  border-color: #0fa958;
+  color: #0fa958;
+  background-color: black;
+}
+.glass{
+  background-color: rgba(0, 0, 0, 0.51);
+  color: #fff;
+}
+/* footer */
+footer {
+  background-color: black;
+  overflow-wrap: break-word;
+  color: #fff;
+}
+footer h4 {
+  color: #c0c0c0;
+}
+footer ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+footer .list-group-item {
+  background: transparent;
+  border-color: #0fa958;
+}
+address {
+  height: 80%;
+}
+address ul li {
+  list-style: none;
+  color: #fff;
+}
+ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+ul li a:hover {
+  color: #0fa958;
+  font-weight: 400;
+}
+.redes {
+  color: white;
+}
+.redes:hover {
+  color: #0fa958;
+}

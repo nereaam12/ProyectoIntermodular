@@ -5,13 +5,13 @@
 
 .page-index .index-hero {
     border-bottom: 1px solid #000;
-    height: 600px
+    height: 100vh
 }
 
 .logo{
-    height: 400px;
+    height: 70vh;
     width: auto;
-    margin-left: 35%;
+    margin-left: 33%;
     margin-top: 7%;
 }
 

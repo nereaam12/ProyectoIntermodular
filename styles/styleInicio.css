@@ -9,10 +9,10 @@
 }
 
 .logo{
-    height: 70vh;
+    height: 50vh;
     width: auto;
-    margin-left: 33%;
-    margin-top: 7%;
+    margin-left: 35%;
+    margin-top: 15%;
 }
 
 header {
@@ -104,4 +104,158 @@ header {
     opacity: 1;
 }
 
+/* ================================
+   MENU SUPERIOR SOBRE HERO
+================================= */
 
+.topbar-index {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 40px;
+    z-index: 1000;
+}
+
+.topbar-index .lang {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #fff;
+}
+
+/* Botón hamburguesa blanco */
+.custom-toggler {
+    border: none;
+}
+
+.custom-toggler:focus {
+    box-shadow: none;
+}
+
+/* Icono hamburguesa blanco forzado */
+.custom-toggler .navbar-toggler-icon {
+    display: inline-block;
+    width: 30px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 24px;
+}
+
+/* ================================
+   MENU OVERLAY LATERAL
+================================= */
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto !important;
+
+    height: 100vh;
+    width: 40vw;
+    max-width: 520px;
+
+    background: rgba(240, 240, 240, 0.92);;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-right: 80px;
+
+    box-shadow: -30px 0 60px rgba(0,0,0,0.12);
+    z-index: 2050;
+}
+
+/* ================================
+   BOTÓN CERRAR
+================================= */
+
+.menu-close {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.menu-close:hover {
+    opacity: 0.6;
+}
+
+
+/* ================================
+   LISTA
+================================= */
+
+.menu-overlay-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-overlay-list li {
+    margin-bottom: 28px; /* más aire vertical */
+}
+
+.menu-overlay-list a {
+    text-decoration: none;
+    font-size: 38px;      /* un poco más elegante */
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: opacity 0.25s ease;
+}
+
+.menu-overlay-list a:hover {
+    opacity: 0.5;
+}
+
+
+/* ================================
+   FOOTER REDES
+================================= */
+
+.menu-overlay-footer {
+    position: absolute;
+    bottom: 50px;
+    right: 90px;
+    text-align: right;
+}
+
+.menu-overlay-footer p {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.55);
+    margin: 6px 0;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 992px) {
+    .menu-overlay {
+        width: 80vw;
+        padding: 0 40px;
+    }
+
+    .menu-overlay-list a {
+        font-size: 28px;
+    }
+
+    .menu-overlay-footer {
+        right: 40px;
+        bottom: 30px;
+    }
+}

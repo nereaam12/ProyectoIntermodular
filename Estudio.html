@@ -4,62 +4,260 @@
 <head>
     <meta charset="UTF-8">
     <title>Estudio | Ruiz de la Prada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Exo+2:wght@300;400&display=swap"
-        rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/styleEstudio.css">
 </head>
 
 <body>
-    <header id="header-estudio">
-        <h1 id="titulo-header-estudio">ESTUDIO</h1>
-        <button id="menu-hamburguesa" aria-label="Menú">
-            ☰
-        </button>
+
+    <header class="topbar">
+        <div>ESP&nbsp;&nbsp;ENG</div>
+
+        <nav class="navbar fixed-top">
+            <div class="container-fluid">
+
+                <!-- Botón hamburguesa -->
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuOverlay">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <!-- MENÚ OVERLAY -->
+                <div class="collapse navbar-collapse menu-overlay" id="menuOverlay">
+
+                    <button class="menu-close" data-bs-toggle="collapse" data-bs-target="#menuOverlay">
+                        ✕
+                    </button>
+
+                    <ul class="navbar-nav ms-auto text-end menu-overlay-list">
+                        <li class="nav-item"><a class="nav-link" href="Inicio.html">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="proyectos.html">PROYECTOS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Estudio.html">ESTUDIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="novedad.html">NOTICIAS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contacto.html">CONTACTO</a></li>
+                    </ul>
+
+                    <div class="menu-overlay-footer">
+                        <p>INSTAGRAM · PINTEREST · FACEBOOK</p>
+                        <p>YOUTUBE · TWITTER · LINKEDIN</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
     </header>
 
-    <main id="contenido-principal" class="container">
-        <section id="seccion-presentacion-estudio" class="row">
-            <article class="col-md-4 bloque-imagen-principal">
-                <img src="img/imgBiog.jpg" alt="Imagen del estudio" class="imagen-bio">
-                <p class="texto-pie-imagen">Descripción técnica</p>
-            </article>
-            <article class="col-md-8 bloque-texto-bio">
-                <h2 class="titulo-seccion">SOBRE MI</h2>
-                <p class="texto-descriptivo">
-                    Gonzalo Ruiz de la Prada Font de Mora es un arquitecto con una trayectoria amplia y diversa, que
-                    combina más de veinticinco años de práctica profesional con una intensa participación en proyectos
-                    nacionales e internacionales de muy distinta escala, desde viviendas unifamiliares hasta grandes
-                    desarrollos urbanos y equipamientos públicos complejos. Su perfil se caracteriza por una sólida
-                    formación técnica, una clara vocación por el diseño arquitectónico y urbano, y una capacidad
-                    acreditada para coordinar equipos y gestionar proyectos con miles de metros cuadrados edificados.
-                    A lo largo de su vida profesional ha acumulado más de 800 obras visadas en el Colegio Oficial de
-                    Arquitectos de la Comunidad Valenciana, un dato que refleja tanto volumen como continuidad en el
-                    ejercicio de la profesión.
-                    En la actualidad, dirije su propio estudio, Ruiz de la Prada Arquitectos, donde ha consolidado una
-                    fuerte especialización en edificios de alto standing. Su actividad reciente se concentra en zonas de
-                    alta demanda y exigencia como Boadilla del Monte, Pozuelo de Alarcón, Las Rozas y Xàbia,
-                    desarrollando proyectos que requieren un equilibrio perfecto entre diseño exclusivo, calidades
-                    premium y ejecución técnica impecable.
-                </p>
-            </article>
-        </section>
-        <section id="seccion-galeria-estudio" class="row">
-            <article class="col-md-4 item-galeria">
-                <img src="img/placeholder.jpg" alt="Proyecto 1" class="imagen-estudio">
-            </article>
-            <article class="col-md-4 item-galeria">
-                <img src="img/placeholder.jpg" alt="Proyecto 2" class="imagen-estudio">
-            </article>
-            <article class="col-md-4 item-galeria">
-                <img src="img/placeholder.jpg" alt="Proyecto 3" class="imagen-estudio">
-            </article>
-        </section>
-    </main>
+    <section class="intro">
+        <p class="intro-sub">RUÍZ DE LA PRADA ARQUITECTOS</p>
+        <h1>ESTUDIO</h1>
 
-    <footer id="footer-principal">
-        <p>© Ruiz de la Prada – Estudio de Arquitectura</p>
+        <nav class="subnav">
+            <a href="#perfil">PERFIL</a>
+            <a href="#trayectoria">TRAYECTORIA</a>
+            <a href="#equipo">EQUIPO</a>
+            <a href="#contacto">CONTACTO</a>
+        </nav>
+    </section>
+
+    <section class="hero">
+        <img src="img/oficina.png" alt="Estudio">
+    </section>
+
+    <!-- PERFIL -->
+    <section id="perfil" class="section">
+        <div class="container">
+            <div class="row align-items-center perfil-row">
+
+                <!-- Imagen -->
+                <div class="col-12 col-md-5 col-lg-4 mb-4 mb-md-0">
+                    <img src="img/imgBiog.jpg" alt="Retrato" class="img-fluid bio-img-bs">
+                </div>
+
+                <!-- Texto -->
+                <div class="col-12 col-md-7 col-lg-6 offset-lg-1">
+                    <div class="bio-text">
+
+                        <p>
+                            <span class="bio-name">Gonzalo Ruiz de la Prada Font de Mora</span> es un arquitecto con una
+                            trayectoria amplia y diversa,
+                            que combina más de veinticinco años de práctica profesional con una intensa participación en
+                            proyectos nacionales
+                            e internacionales de muy distinta escala, desde viviendas unifamiliares hasta grandes
+                            desarrollos urbanos y
+                            equipamientos públicos complejos.
+                        </p>
+
+                        <p>
+                            Su perfil se caracteriza por una sólida formación técnica, una clara vocación por el diseño
+                            arquitectónico y urbano,
+                            y una capacidad acreditada para coordinar equipos y gestionar proyectos con miles de metros
+                            cuadrados edificados.
+                        </p>
+
+                        <p>
+                            A lo largo de su vida profesional ha acumulado más de 800 obras visadas en el Colegio
+                            Oficial de Arquitectos de la
+                            Comunidad Valenciana, un dato que refleja tanto volumen como continuidad en el ejercicio de
+                            la profesión.
+                        </p>
+
+                        <p>
+                            En la actualidad dirige su propio estudio, Ruiz de la Prada Arquitectos, donde ha
+                            consolidado una fuerte
+                            especialización en edificios de alto standing. Su actividad reciente se concentra en zonas
+                            de alta demanda y
+                            exigencia como Boadilla del Monte, Pozuelo de Alarcón, Las Rozas y Xàbia, desarrollando
+                            proyectos que requieren
+                            un equilibrio preciso entre diseño exclusivo, calidades premium y ejecución técnica
+                            impecable.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAYECTORIA -->
+    <section id="trayectoria" class="section trajectory">
+
+        <h3 class="trajectory-title">Trayectoria destacada</h3>
+
+        <article class="trajectory-lead">
+            <h4>Ruiz de la Prada Arquitectos</h4>
+            <p>CEO · Gerente</p>
+            <span>2012 – Actualidad</span>
+        </article>
+
+        <div class="container">
+            <div class="row trajectory-row">
+
+                <div class="col-lg-4 col-md-6 trajectory-item">
+                    <h4>Más de 800 obras visadas</h4>
+                    <p>Colegio Oficial de Arquitectos</p>
+                    <span>Comunidad Valenciana</span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 trajectory-item">
+                    <h4>Ciudad de la Ciencia</h4>
+                    <p>Complejo hotelero · 4 estrellas</p>
+                    <span>Blida, Argelia · 2014</span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 trajectory-item">
+                    <h4>Benghazi</h4>
+                    <p>Plan urbano · 1.000.000 m²</p>
+                    <span>Libia</span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 trajectory-item">
+                    <h4>El Achour</h4>
+                    <p>Promoción inmobiliaria · 400 viviendas</p>
+                    <span>Argelia · 2014</span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 trajectory-item">
+                    <h4>Tripoli · Bab Tarablus</h4>
+                    <p>Torres de oficinas · Zona 16</p>
+                    <span>Libia</span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 trajectory-item">
+                    <h4>El Hamma</h4>
+                    <p>Complejo residencial y equipamientos</p>
+                    <span>Argelia</span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 trajectory-item">
+                    <h4>ECOU Hipódromo</h4>
+                    <p>Centro comercial y residencial · 120.000 m²</p>
+                    <span>Libia</span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 trajectory-item">
+                    <h4>Ciudad con equipamientos</h4>
+                    <p>Colegios · Viviendas · Hoteles · Oficinas</p>
+                    <span>Benghazi · 1.000.000 m²</span>
+                </div>
+
+                <div class="col-lg-4 col-md-6 trajectory-item">
+                    <h4>Torres de Oficinas · “Towers”</h4>
+                    <p>Complejo de oficinas de gran altura</p>
+                    <span>Tripoli · Libia</span>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row footer-row">
+    
+                <!-- Col 1 · Logo / Estudio -->
+                <div class="col-md-3 footer-col">
+                    <h6 class="footer-title">Ruiz de la Prada Arquitectos</h6>
+                    <p>Estudio de arquitectura</p>
+                    <p>Proyectos nacionales e internacionales</p>
+                </div>
+    
+                <!-- Col 2 · Dirección / Mapa -->
+                <div class="col-md-3 footer-col">
+                    <h6 class="footer-title">Estudio</h6>
+                    <p>Calle XXXX, nº XX</p>
+                    <p>2800X · Madrid</p>
+                    <p>España</p>
+    
+                    <div class="footer-map">
+                        <iframe 
+                            src="https://www.google.com/maps?q=Madrid&output=embed"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+    
+                <!-- Col 3 · Contacto -->
+                <div class="col-md-3 footer-col">
+                    <h6 class="footer-title">Contacto</h6>
+                    <p>Tel. +34 000 000 000</p>
+                    <p>info@ruizdelaprada.com</p>
+                    <p>L–V · 9:00 – 18:00</p>
+                </div>
+    
+                <!-- Col 4 · Redes -->
+                <div class="col-md-3 footer-col">
+                    <h6 class="footer-title">Síguenos</h6>
+                    <ul class="footer-social">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+    
+            </div>
+    
+            <!-- Línea inferior -->
+            <div class="footer-bottom">
+                © Ruiz de la Prada Arquitectos · Todos los derechos reservados
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

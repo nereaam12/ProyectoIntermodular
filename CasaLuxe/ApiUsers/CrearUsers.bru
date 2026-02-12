@@ -1,0 +1,23 @@
+meta {
+  name: CrearUsers
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8000/api/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "aldesa01@alumnatflorida.es",
+    "password": "123456"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

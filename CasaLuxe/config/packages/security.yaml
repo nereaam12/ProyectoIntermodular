@@ -19,7 +19,7 @@ security:
 
         # Firewall para el endpoint de login
         login:
-            pattern: ^/api/login
+            pattern: /api/login
             stateless: true
             json_login:
                 # Ruta donde se envían las credenciales

@@ -49,6 +49,9 @@ class AuthController extends AbstractController
         $user->setEmail($data['email']);
         $user->setPassword($passwordHasher->hashPassword($user, $data['password']));
         $user->setRoles(['ROLE_USER']);
+        $user->setName($data['name']);
+        $user->setSurname($data['surname']);
+        $user->setTelephone($data['telephone']);
 
         $em->persist($user);
         $em->flush();

@@ -2,152 +2,266 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Inicio | Ruiz de la Prada</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/styleInicio.css">
+  <meta charset="UTF-8">
+  <title>Inicio | Ruiz de la Prada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles/styleInicio.css">
 </head>
 
 <body class="page-index">
 
-    <header class="index-hero">
+  <header class="index-hero">
 
-        <!-- ===== MENÚ SUPERIOR SOBRE HERO ===== -->
-        <div class="topbar-index">
-            <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- ===== MENÚ SUPERIOR SOBRE HERO ===== -->
+    <div class="topbar-index">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <div class="lang">ESP&nbsp;&nbsp;ENG</div>
 
-                <div class="lang">ESP&nbsp;&nbsp;ENG</div>
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#menuOverlay" aria-controls="menuOverlay" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
 
-                <button class="navbar-toggler custom-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menuOverlay">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <!-- ===== MENÚ OVERLAY LATERAL ===== -->
+    <div class="collapse menu-overlay" id="menuOverlay">
+      <button class="menu-close" data-bs-toggle="collapse" data-bs-target="#menuOverlay" aria-label="Cerrar menú">
+        ✕
+      </button>
 
-            </div>
+      <ul class="menu-overlay-list text-end">
+        <li><a href="Inicio.html">INICIO</a></li>
+        <li><a href="proyectos.html">PROYECTOS</a></li>
+        <li><a href="Estudio.html">ESTUDIO</a></li>
+        <li><a href="novedades.html">NOTICIAS</a></li>
+        <li><a href="Contacto.html">CONTACTO</a></li>
+      </ul>
+
+      <div class="menu-overlay-footer">
+        <p>INSTAGRAM · PINTEREST · FACEBOOK</p>
+        <p>YOUTUBE · TWITTER · LINKEDIN</p>
+      </div>
+    </div>
+
+    <!-- ===== LOGO HERO ===== -->
+    <div class="index-hero-center">
+      <img src="img/logoRuizBlanco.png" alt="Logo de Ruiz de la Prada" class="logo">
+    </div>
+
+  </header>
+
+  <main class="index-main">
+
+    <!-- ========= PROYECTOS ========= -->
+    <section class="index-section">
+      <div class="container">
+        <div class="index-section-head">
+          <h2 class="index-section-title">PROYECTOS</h2>
+          <p class="index-section-subtitle">Selección de viviendas y reformas recientes</p>
         </div>
 
-        <!-- ===== MENÚ OVERLAY LATERAL ===== -->
-        <div class="collapse menu-overlay" id="menuOverlay">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <a class="proyecto-card" href="#">
+              <img src="img/proyectos/1.png" class="proyecto-img" alt="Proyecto 1">
+              <div class="proyecto-overlay">
+                <h3 class="proyecto-name">Proyecto 1</h3>
+                <p class="proyecto-meta">Vivienda · 2024</p>
+              </div>
+            </a>
+          </div>
 
-            <button class="menu-close"
-                data-bs-toggle="collapse"
-                data-bs-target="#menuOverlay">
-                ✕
-            </button>
+          <div class="col-lg-4 col-md-6">
+            <a class="proyecto-card" href="#">
+              <img src="img/proyectos/2.png" class="proyecto-img" alt="Proyecto 2">
+              <div class="proyecto-overlay">
+                <h3 class="proyecto-name">Proyecto 2</h3>
+                <p class="proyecto-meta">Reforma · 2023</p>
+              </div>
+            </a>
+          </div>
 
-            <ul class="menu-overlay-list text-end">
-                <li><a href="Inicio.html">INICIO</a></li>
-                <li><a href="proyectos.html">PROYECTOS</a></li>
-                <li><a href="Estudio.html">ESTUDIO</a></li>
-                <li><a href="novedad.html">NOTICIAS</a></li>
-                <li><a href="Contacto.html">CONTACTO</a></li>
-            </ul>
-
-            <div class="menu-overlay-footer">
-                <p>INSTAGRAM · PINTEREST · FACEBOOK</p>
-                <p>YOUTUBE · TWITTER · LINKEDIN</p>
-            </div>
-
+          <div class="col-lg-4 col-md-6">
+            <a class="proyecto-card" href="#">
+              <img src="img/proyectos/3.png" class="proyecto-img" alt="Proyecto 3">
+              <div class="proyecto-overlay">
+                <h3 class="proyecto-name">Proyecto 3</h3>
+                <p class="proyecto-meta">Interiorismo · 2022</p>
+              </div>
+            </a>
+          </div>
         </div>
 
-        <!-- ===== LOGO HERO (NO TOCADO) ===== -->
-        <div class="jumbotron jumbotron-fluid">
-            <img src="img/logoRuizBlanco.png" alt="Logo de Ruiz de la Prada" class="logo">
+        <div class="index-cta">
+          <a href="proyectos.html" class="btn index-btn">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= ESTUDIO ========= -->
+    <section class="index-section index-section-alt">
+      <div class="container">
+        <div class="index-section-head">
+          <h2 class="index-section-title">ESTUDIO</h2>
+          <p class="index-section-subtitle">Equipo, enfoque y trayectoria</p>
         </div>
 
-    </header>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6">
+            <a class="feature-card" href="Estudio.html">
+              <img src="https://www.madridiario.es/fotos/1/222902_1_1.jpg" class="feature-img" alt="Estudio">
+              <div class="feature-body">
+                <h3 class="feature-title">Conoce el estudio</h3>
+                <p class="feature-text">Una arquitectura precisa, sobria y construida para durar.</p>
+                <span class="feature-link">Ver estudio →</span>
+              </div>
+            </a>
+          </div>
 
-
-    <!-- ===== TU CONTENIDO EXACTO (NO TOCADO) ===== -->
-
-    <main class="container index-main">
-        <section class="index-section">
-            <h2 class="index-section-title">PROYECTOS</h2>
+          <div class="col-lg-6">
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <a class="proyecto-card" href="#" aria-label="Ver proyecto 1">
-                        <img src="img/proyectos/1.png" class="proyecto-img" alt="Proyecto 1">
-                        <div class="proyecto-overlay">
-                            <h2 class="proyecto-name">Proyecto 1</h2>
-                            <p class="proyecto-meta">Vivienda · 2024</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <a class="proyecto-card" href="#" aria-label="Ver proyecto 2">
-                        <img src="img/proyectos/2.png" class="proyecto-img" alt="Proyecto 1">
-                        <div class="proyecto-overlay">
-                            <h2 class="proyecto-name">Proyecto 2</h2>
-                            <p class="proyecto-meta">Reforma · 2023</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <a class="proyecto-card" href="#" aria-label="Ver proyecto 3">
-                        <img src="img/proyectos/3.png" class="proyecto-img" alt="Proyecto 3">
-                        <div class="proyecto-overlay">
-                            <h2 class="proyecto-name">Proyecto 3</h2>
-                            <p class="proyecto-meta">Interiorismo · 2022</p>
-                        </div>
-                    </a>
-                </div>
+              <div class="col-6">
+                <img src="https://www.madridiario.es/fotos/1/222902_1_1.jpg" class="grid-img" alt="">
+              </div>
+              <div class="col-6">
+                <img src="https://www.madridiario.es/fotos/1/222902_1_1.jpg" class="grid-img" alt="">
+              </div>
+              <div class="col-12">
+                <img src="https://www.madridiario.es/fotos/1/222902_1_1.jpg" class="grid-img grid-img-wide" alt="">
+              </div>
             </div>
-            <div class="text-center mt-4">
-                <a href="proyectos.html" class="btn btn-outline-dark">Ver más</a>
-            </div>
-        </section>
-
-        <section class="index-section">
-            <h2 class="index-section-title">ESTUDIO</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <img src="https://www.madridiario.es/fotos/1/222902_1_1.jpg" class="img-fluid index-img">
-                </div>
-                <div class="col-md-4">
-                    <img src="https://www.madridiario.es/fotos/1/222902_1_1.jpg" class="img-fluid index-img">
-                </div>
-                <div class="col-md-4">
-                    <img src="https://www.madridiario.es/fotos/1/222902_1_1.jpg" class="img-fluid index-img">
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <a href="estudio.html" class="btn btn-outline-dark">Ver más</a>
-            </div>
-        </section>
-
-        <section class="index-section">
-            <h2 class="index-section-title">NOVEDADES</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <img src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png"
-                        class="img-fluid index-img">
-                </div>
-                <div class="col-md-4">
-                    <img src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png"
-                        class="img-fluid index-img">
-                </div>
-                <div class="col-md-4">
-                    <img src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png"
-                        class="img-fluid index-img">
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-dark">Ver más</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="index-footer">
-        <div class="container py-4 text-center">
-            <p class="mb-0">© Ruiz de la Prada – Estudio de Arquitectura</p>
+          </div>
         </div>
-    </footer>
 
-    <!-- IMPORTANTE PARA QUE FUNCIONE EL COLLAPSE -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="carrousel.js"></script>
+      </div>
+    </section>
 
+    <!-- ========= NOVEDADES ========= -->
+    <section class="index-section">
+      <div class="container">
+        <div class="index-section-head">
+          <h2 class="index-section-title">NOVEDADES</h2>
+          <p class="index-section-subtitle">Noticias, publicaciones y avances de obra</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <a class="news-card" href="novedades.html">
+              <img src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png" class="news-img"
+                alt="">
+              <div class="news-body">
+                <p class="news-kicker">Actualidad</p>
+                <h3 class="news-title">Nueva entrega de proyecto</h3>
+                <p class="news-text">Finalizamos fase de acabados y puesta en marcha.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <a class="news-card" href="novedades.html">
+              <img src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png" class="news-img"
+                alt="">
+              <div class="news-body">
+                <p class="news-kicker">Obra</p>
+                <h3 class="news-title">Avance en construcción</h3>
+                <p class="news-text">Estructura y envolvente completadas.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <a class="news-card" href="novedades.html">
+              <img src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png" class="news-img"
+                alt="">
+              <div class="news-body">
+                <p class="news-kicker">Prensa</p>
+                <h3 class="news-title">Publicación destacada</h3>
+                <p class="news-text">Selección en medios del sector.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="index-cta">
+          <a href="novedades.html" class="btn index-btn">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================
+       FOOTER (IGUAL QUE PROYECTOS)
+  ================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- BLOQUE MARCA -->
+        <div class="footer-block">
+          <h5>Ruiz de la Prada</h5>
+          <p>
+            Arquitectura contemporánea basada en precisión,
+            luz y materialidad.
+          </p>
+        </div>
+
+        <!-- BLOQUE CONTACTO + MAPA -->
+        <div class="footer-block footer-contact">
+          <h5>Contacto</h5>
+
+          <p>
+            Carrer de la Marina Baixa, 3<br>
+            46015 València, España
+          </p>
+
+          <p>
+            654 56 12 51<br>
+            info@ruizdelaprada.es
+          </p>
+
+          <div class="footer-map">
+            <iframe src="https://www.google.com/maps?q=Carrer+de+la+Marina+Baixa,+3,+46015+València&output=embed"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- BLOQUE REDES (MISMO QUE PROYECTOS) -->
+        <div class="footer-block footer-right">
+          <h5>Síguenos</h5>
+
+          <div class="footer-social-icons">
+            <a href="#" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="TikTok">
+              <i class="bi bi-tiktok"></i>
+            </a>
+
+            <a href="#" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Ruiz de la Prada · Estudio de Arquitectura
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="carrousel.js"></script>
 </body>
 
 </html>

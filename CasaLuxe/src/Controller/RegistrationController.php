@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/api/users', name: 'api_users_')]
 class RegistrationController extends AbstractController
 {
-    #[Route('', methods: ['POST'], name: 'create')]
+    #[Route('', name: 'create', methods: ['POST'])]
     public function create(
         Request                     $request,
         EntityManagerInterface      $em,
@@ -29,13 +29,15 @@ class RegistrationController extends AbstractController
         try {
             $user = new User();
             $user->setEmail($data['email']);
-
             $hashedPassword = $passwordHasher->hashPassword(
                 $user,
                 $data['password']
             );
 
             $user->setPassword($hashedPassword);
+            $user->setTelephone($data['telephone']);
+            $user->setName($data['name']);
+            $user->setSurname($data['surname']);
 
             $em->persist($user);
             $em->flush();
@@ -52,4 +54,3 @@ class RegistrationController extends AbstractController
         }
     }
 }
-

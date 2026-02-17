@@ -167,6 +167,8 @@
       <path value="$PROJECT_DIR$/CasaLuxe/vendor/symfony/maker-bundle" />
       <path value="$PROJECT_DIR$/CasaLuxe/vendor/symfony/mailer" />
       <path value="$PROJECT_DIR$/CasaLuxe/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/CasaLuxe/vendor/lexik/jwt-authentication-bundle" />
+      <path value="$PROJECT_DIR$/CasaLuxe/vendor/lcobucci/jwt" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.3" />

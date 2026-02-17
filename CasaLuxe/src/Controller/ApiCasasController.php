@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/api/projects', name: 'api_projects_')]
 class ApiCasasController extends AbstractController
 {
-    #[Route('', methods: ['GET'], name: 'list')]
+    #[Route('', name: 'list', methods: ['GET'])]
     public function list(EntityManagerInterface $em): JsonResponse
     {
         $projects = $em->getRepository(Project::class)->findAll();

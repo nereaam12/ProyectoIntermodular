@@ -27,6 +27,11 @@ export const routes: Routes = [
     title: 'Contacto | Ruiz de la Prada',
   },
   {
+    path: 'login',
+    loadComponent: () => import('./components/login/login').then(m => m.Login),
+    title: 'Login',
+  },
+  {
     path: '**',
     redirectTo: '',
   },

@@ -33,12 +33,11 @@
   z-index: 2;
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 .logo {
-  height: 42vh;
+  height: 30vh;
   width: auto;
   filter: drop-shadow(0 4px 30px rgba(0, 0, 0, 0.15));
   image-rendering: high-quality;

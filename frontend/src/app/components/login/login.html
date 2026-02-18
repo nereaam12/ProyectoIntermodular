@@ -1,0 +1,21 @@
+<div class="login-container">
+  <h2>Iniciar Sesión</h2>
+
+  @if (errorMessage !== '') {
+    <div class="error">{{ errorMessage }}</div>
+  }
+
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Email:</label>
+      <input type="email" formControlName="email" placeholder="email@ejemplo.com">
+    </div>
+
+    <div>
+      <label>Password:</label>
+      <input type="password" formControlName="password" placeholder="********">
+    </div>
+
+    <button type="submit">Entrar</button>
+  </form>
+</div>

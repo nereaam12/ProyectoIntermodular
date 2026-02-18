@@ -25,6 +25,11 @@ class RegistrationController extends AbstractController
     {
 
         $data = json_decode($request->getContent(), true);
+        $email = $data['email'] ?? null;
+        $password = $data['password'] ?? null;
+        $name = $data['name'] ?? '';
+        $surname = $data['surname'] ?? '';
+        $telephone = $data['telephone'] ?? '';
 
         try {
             $user = new User();

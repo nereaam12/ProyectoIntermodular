@@ -1,1 +1,1 @@
-TRUNCATE TABLE project;
+TRUNCATE TABLE user;

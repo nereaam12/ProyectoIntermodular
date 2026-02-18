@@ -24,7 +24,7 @@ class Project
     private $image = null;
 
     #[ORM\ManyToOne(inversedBy: 'projects')]
-    private ?User $users = null;
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -69,12 +69,12 @@ class Project
 
     public function getUsers(): ?User
     {
-        return $this->users;
+        return $this->user;
     }
 
-    public function setUsers(?User $users): static
+    public function setUsers(?User $user): static
     {
-        $this->users = $users;
+        $this->user = $user;
 
         return $this;
     }

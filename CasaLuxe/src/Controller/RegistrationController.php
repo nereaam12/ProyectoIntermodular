@@ -32,17 +32,25 @@ class RegistrationController extends AbstractController
         $telephone = $data['telephone'] ?? '';
 
         try {
+
+            if (!$email || !$password) {
+                return new JsonResponse([
+                    'error' => 'Email and password are required'
+                ], 400);
+            }
+
             $user = new User();
-            $user->setEmail($data['email']);
+            $user->setEmail($email);
+
             $hashedPassword = $passwordHasher->hashPassword(
                 $user,
-                $data['password']
+                $password
             );
 
             $user->setPassword($hashedPassword);
-            $user->setTelephone($data['telephone']);
-            $user->setName($data['name']);
-            $user->setSurname($data['surname']);
+            $user->setTelephone($telephone);
+            $user->setName($name);
+            $user->setSurname($surname);
 
             $em->persist($user);
             $em->flush();
@@ -55,7 +63,13 @@ class RegistrationController extends AbstractController
 
             return new JsonResponse([
                 'error' => 'This email is already registered'
-            ], 409); // 409 = Conflict
+            ], 409);
+
+        } catch (\Exception $e) {
+
+            return new JsonResponse([
+                'error' => $e->getMessage()
+            ], 500);
         }
     }
 }

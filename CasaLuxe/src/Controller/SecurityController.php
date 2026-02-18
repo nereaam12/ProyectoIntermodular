@@ -9,20 +9,32 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
-    #[Route(path: '/login', name: 'app_login')]
-    public function login(AuthenticationUtils $authenticationUtils): Response
-    {
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
+    #[Route('/api/login', name: 'api_login', methods: ['POST'])]
+public function login(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordHasher): JsonResponse
+{
+    $data = json_decode($request->getContent(), true);
+    $email = $data['email'] ?? '';
+    $password = $data['password'] ?? '';
 
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-
-        return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error' => $error,
-        ]);
+    $user = $userRepository->findOneBy(['email' => $email]);
+    if (!$user) {
+        return new JsonResponse(['error' => 'Invalid credentials'], 401);
     }
+
+    if (!$passwordHasher->isPasswordValid($user, $password)) {
+        return new JsonResponse(['error' => 'Invalid credentials'], 401);
+    }
+
+    // Aquí generas token JWT si quieres, o devuelves un mensaje simple
+    return new JsonResponse([
+        'message' => 'Login successful',
+        'user' => [
+            'id' => $user->getId(),
+            'email' => $user->getEmail(),
+            'name' => $user->getName(),
+        ]
+    ]);
+}
 
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): void

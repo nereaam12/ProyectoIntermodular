@@ -40,7 +40,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     #[ORM\Column(length: 9, unique: true)]
-    private ?int $telephone = null;
+    private ?string $telephone = null;
 
     #[ORM\Column(length: 255, nullable: false)]
     private ?string $name = null;
@@ -183,7 +183,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->projects->contains($project)) {
             $this->projects->add($project);
-            $project->setUsers($this);
+            $project->setUser($this);
         }
 
         return $this;
@@ -193,7 +193,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->projects->removeElement($project)) {
             // set the owning side to null (unless already changed)
-            if ($project->getUsers() === $this) {
+            if ($project->getUser() === $this) {
                 $project->setUsers(null);
             }
         }

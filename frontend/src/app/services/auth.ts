@@ -16,7 +16,7 @@ export class AuthService {
 
   // Login - devuelve el token
   login(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/users`, { email, password });
+    return this.http.post(`${this.apiUrl}/login_check`, { email, password });
   }
 
   // Guardar token en localStorage

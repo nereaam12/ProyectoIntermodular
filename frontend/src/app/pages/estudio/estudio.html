@@ -1,0 +1,71 @@
+<!-- INTRO -->
+<section class="intro text-center">
+  <p class="intro-sub">{{ 'estudio.firm' | translate }}</p>
+  <h1 class="section-title">{{ 'estudio.title' | translate }}</h1>
+
+  <nav class="subnav">
+    <a href="#perfil">{{ 'estudio.subnav.perfil' | translate }}</a>
+    <a href="#trayectoria">{{ 'estudio.subnav.trayectoria' | translate }}</a>
+    <a href="#equipo">{{ 'estudio.subnav.equipo' | translate }}</a>
+    <a routerLink="/contacto">{{ 'estudio.subnav.contacto' | translate }}</a>
+  </nav>
+</section>
+
+<!-- HERO IMAGE -->
+<section class="hero-image">
+  <img src="img/oficina.png" [alt]="'estudio.heroAlt' | translate" />
+</section>
+
+<!-- PERFIL -->
+<section id="perfil" class="section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-5 col-lg-4 mb-4 mb-md-0">
+        <img
+          src="img/imgBiog.jpg"
+          [alt]="'estudio.bioImgAlt' | translate"
+          class="bio-img img-fluid"
+        />
+      </div>
+
+      <div class="col-12 col-md-7 col-lg-6 offset-lg-1">
+        <div class="bio-text">
+          <p>
+            <span class="bio-name">{{ 'estudio.bioName' | translate }}</span>
+            {{ 'estudio.bioP1' | translate }}
+          </p>
+          <p>{{ 'estudio.bioP2' | translate }}</p>
+          <p>{{ 'estudio.bioP3' | translate }}</p>
+          <p>{{ 'estudio.bioP4' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAYECTORIA -->
+@defer (on viewport) {
+  <section id="trayectoria" class="section trajectory">
+    <h3 class="trajectory-title">{{ 'estudio.trajectoryTitle' | translate }}</h3>
+
+    <article class="trajectory-lead text-center">
+      <h4>{{ 'estudio.trajectoryLead' | translate }}</h4>
+      <p>{{ 'estudio.trajectoryRole' | translate }}</p>
+      <span>{{ 'estudio.trajectoryPeriod' | translate }}</span>
+    </article>
+
+    <div class="container">
+      <div class="row trajectory-row">
+        @for (item of trajectoryItems(); track item.titleKey) {
+          <div class="col-lg-4 col-md-6 trajectory-item">
+            <h4>{{ item.titleKey | translate }}</h4>
+            <p>{{ item.descriptionKey | translate }}</p>
+            <span>{{ item.locationKey | translate }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+} @placeholder {
+  <div style="height: 400px"></div>
+}

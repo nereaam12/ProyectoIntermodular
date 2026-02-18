@@ -1,0 +1,150 @@
+<!-- ===== HERO CON CARRUSEL ===== -->
+<header class="index-hero">
+  <!-- Imágenes reales del carrusel para máxima nitidez -->
+  @for (img of heroImages(); track img; let i = $index) {
+    <img
+      [src]="img"
+      class="hero-slide"
+      [class.active]="i === currentIndex()"
+      [alt]="('inicio.imageLabel' | translate) + ' ' + (i + 1)"
+      loading="eager"
+      fetchpriority="high"
+    />
+  }
+
+  <div class="index-hero-center">
+    <img src="img/logoRuizBlanco.png" [alt]="'inicio.heroAlt' | translate" class="logo" />
+  </div>
+
+  <!-- Indicadores del carrusel -->
+  <div class="carousel-indicators">
+    @for (img of heroImages(); track img; let i = $index) {
+      <button
+        class="indicator"
+        [class.active]="i === currentIndex()"
+        (click)="currentIndex.set(i)"
+        [attr.aria-label]="('inicio.imageLabel' | translate) + ' ' + (i + 1)"
+      ></button>
+    }
+  </div>
+</header>
+
+<div class="index-main">
+  <!-- ========= PROYECTOS ========= -->
+  <section class="index-section">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title">{{ 'inicio.proyectos.title' | translate }}</h2>
+        <p class="section-subtitle">{{ 'inicio.proyectos.subtitle' | translate }}</p>
+      </div>
+
+      <div class="row g-4">
+        @for (p of proyectos(); track p.nameKey) {
+          <div class="col-lg-4 col-md-6">
+            <a class="proyecto-card" routerLink="/proyectos">
+              <img [src]="p.img" class="proyecto-img" [alt]="p.nameKey | translate" />
+              <div class="proyecto-overlay">
+                <h3 class="proyecto-name">{{ p.nameKey | translate }}</h3>
+                <p class="proyecto-meta">{{ p.metaKey | translate }}</p>
+              </div>
+            </a>
+          </div>
+        }
+      </div>
+
+      <div class="section-cta text-center">
+        <a routerLink="/proyectos" class="btn btn-custom">{{
+          'inicio.proyectos.seeMore' | translate
+        }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= ESTUDIO ========= -->
+  <section class="index-section index-section-alt">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title">{{ 'inicio.estudio.title' | translate }}</h2>
+        <p class="section-subtitle">{{ 'inicio.estudio.subtitle' | translate }}</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-6">
+          <a class="feature-card" routerLink="/estudio">
+            <img
+              src="https://www.madridiario.es/fotos/1/222902_1_1.jpg"
+              class="feature-img"
+              [alt]="'inicio.estudio.title' | translate"
+            />
+            <div class="feature-body">
+              <h3 class="feature-title">{{ 'inicio.estudio.cardTitle' | translate }}</h3>
+              <p class="feature-text">{{ 'inicio.estudio.cardText' | translate }}</p>
+              <span class="feature-link">{{ 'inicio.estudio.cardLink' | translate }} &rarr;</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="row g-4">
+            <div class="col-6">
+              <img
+                src="https://www.madridiario.es/fotos/1/222902_1_1.jpg"
+                class="grid-img"
+                alt=""
+              />
+            </div>
+            <div class="col-6">
+              <img
+                src="https://www.madridiario.es/fotos/1/222902_1_1.jpg"
+                class="grid-img"
+                alt=""
+              />
+            </div>
+            <div class="col-12">
+              <img
+                src="https://www.madridiario.es/fotos/1/222902_1_1.jpg"
+                class="grid-img grid-img-wide"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= NOVEDADES ========= -->
+  @defer (on viewport) {
+    <section class="index-section">
+      <div class="container">
+        <div class="section-head text-center">
+          <h2 class="section-title">{{ 'inicio.novedades.title' | translate }}</h2>
+          <p class="section-subtitle">{{ 'inicio.novedades.subtitle' | translate }}</p>
+        </div>
+
+        <div class="row g-4">
+          @for (n of novedades(); track n.titleKey) {
+            <div class="col-lg-4 col-md-6">
+              <a class="news-card" routerLink="/novedades">
+                <img [src]="n.img" class="news-img" [alt]="n.titleKey | translate" />
+                <div class="news-body">
+                  <p class="news-kicker">{{ n.kickerKey | translate }}</p>
+                  <h3 class="news-title">{{ n.titleKey | translate }}</h3>
+                  <p class="news-text">{{ n.textKey | translate }}</p>
+                </div>
+              </a>
+            </div>
+          }
+        </div>
+
+        <div class="section-cta text-center">
+          <a routerLink="/novedades" class="btn btn-custom">{{
+            'inicio.novedades.seeMore' | translate
+          }}</a>
+        </div>
+      </div>
+    </section>
+  } @placeholder {
+    <div class="section-placeholder"></div>
+  }
+</div>

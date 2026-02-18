@@ -1,0 +1,47 @@
+<header class="proyectos-hero">
+  <div class="container py-5 text-center">
+    <h1 class="section-title">{{ 'proyectos.title' | translate }}</h1>
+    <p class="section-subtitle mb-4">{{ 'proyectos.subtitle' | translate }}</p>
+
+    <!-- Buscador reactivo -->
+    <div class="search-box">
+      <input
+        type="text"
+        class="search-input"
+        [placeholder]="'proyectos.searchPlaceholder' | translate"
+        [value]="filterText()"
+        (input)="onFilter($event)"
+      />
+    </div>
+  </div>
+</header>
+
+<main class="container proyectos-main">
+  @let items = filteredProyectos();
+
+  @if (items.length > 0) {
+    <section class="row g-4">
+      @for (p of items; track p.nameKey) {
+        <article class="col-12 col-sm-6 col-lg-4">
+          <a
+            class="proyecto-card"
+            href="#"
+            [attr.aria-label]="
+              ('proyectos.viewProject' | translate) + ' ' + (p.nameKey | translate)
+            "
+          >
+            <img [src]="p.img" class="proyecto-img" [alt]="p.nameKey | translate" />
+            <div class="proyecto-overlay">
+              <h2 class="proyecto-name">{{ p.nameKey | translate }}</h2>
+              <p class="proyecto-meta">{{ p.metaKey | translate }}</p>
+            </div>
+          </a>
+        </article>
+      }
+    </section>
+  } @else {
+    <div class="empty-state text-center py-5">
+      <p class="section-subtitle">{{ 'proyectos.emptyState' | translate }} "{{ filterText() }}"</p>
+    </div>
+  }
+</main>

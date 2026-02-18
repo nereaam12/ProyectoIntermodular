@@ -1,0 +1,178 @@
+:host {
+  display: block;
+}
+
+/* INTRO */
+.intro {
+  margin-top: 120px;
+  padding: 0 20px;
+}
+
+.intro-sub {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.subnav {
+  margin-top: 40px;
+
+  a {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin: 0 14px;
+    color: var(--color-primary);
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+/* HERO IMAGE */
+.hero-image {
+  width: 100%;
+  padding: 0 60px;
+  margin-top: 40px;
+  height: 75vh;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
+    display: block;
+    image-rendering: high-quality;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* SECTIONS */
+.section {
+  max-width: 1280px;
+  margin: 140px auto;
+  padding: 0 40px;
+}
+
+/* PERFIL */
+.bio-img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  image-rendering: high-quality;
+}
+
+.bio-text {
+  max-width: 650px;
+  margin-top: 30px;
+}
+
+.bio-name {
+  font-weight: 500;
+}
+
+.bio-text p {
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* TRAYECTORIA */
+.trajectory-title {
+  font-size: 20px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 100px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 700px;
+    height: 1px;
+    background: var(--color-border);
+  }
+}
+
+.trajectory-lead {
+  max-width: 500px;
+  margin: 0 auto 110px auto;
+
+  h4 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+  }
+
+  span {
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+}
+
+.trajectory-row {
+  row-gap: 60px;
+}
+
+.trajectory-item {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-left: 1px solid #eaeaea;
+
+  h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  span {
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .hero-image {
+    padding: 0 30px;
+    height: 65vh;
+  }
+
+  .bio-text {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    padding: 0 20px;
+    height: 55vh;
+  }
+
+  .intro h1 {
+    font-size: 42px;
+  }
+}

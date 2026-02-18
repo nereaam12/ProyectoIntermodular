@@ -1,0 +1,111 @@
+@use 'bootstrap/scss/bootstrap';
+
+/* ==================================================
+   VARIABLES GLOBALES
+================================================== */
+:root {
+  --color-primary: #111;
+  --color-accent: #bfa27a;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f1ea;
+  --color-border: #e6e6e6;
+  --color-border-alt: #e8e2d8;
+  --color-text: #111;
+  --color-text-muted: #777;
+  --color-text-secondary: #666;
+  --font-primary: 'Inter', sans-serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+/* ==================================================
+   RESET / BASE
+================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* ==================================================
+   UTILIDADES COMPARTIDAS
+================================================== */
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 14px;
+}
+
+.section-subtitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+}
+
+.btn-custom {
+  border-radius: 0;
+  border: 1px solid var(--color-primary);
+  padding: 12px 50px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  background: transparent;
+  color: var(--color-primary);
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+}
+
+.btn-accent {
+  background: var(--color-accent);
+  border: none;
+  color: #fff;
+  padding: 12px 40px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+}
+
+/* Scrollbar elegante */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 3px;
+}

@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,34 +16,23 @@ export class AuthService {
 
   // Login - devuelve el token
   login(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login_check`, { email, password });
+    return this.http.post<{ token: string }>(`${this.apiUrl}/login_check`, { email, password })
+      .pipe(
+        tap(response => {
+          // Guardar token en cookie para que Symfony lo reciba automáticamente
+          document.cookie = `BEARER=${response.token}; path=/; SameSite=Lax`;
+        })
+      );
   }
 
-  // Guardar token en localStorage
-  saveToken(token: string): void {
-    localStorage.setItem('jwt_token', token);
-  }
-
-  // Obtener token
-  getToken(): string|null {
-    return localStorage.getItem('jwt_token');
-  }
-
-  // Eliminar token (logout)
+  // Logout: elimina la cookie
   logout(): void {
-    localStorage.removeItem('jwt_token');
+    // Poner la cookie con fecha pasada para borrarla
+    document.cookie = 'BEARER=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
   }
 
   // Comprobar si está logueado
   isLoggedIn(): boolean {
-    return this.getToken() !== null;
-  }
-
-  // Crear headers con el token para peticiones autenticadas
-  getAuthHeaders(): HttpHeaders {
-    const token = this.getToken();
-    return new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
+    return document.cookie.includes('BEARER=');
   }
 }

@@ -2,9 +2,21 @@
   display: block;
 }
 
+/* LOGO */
+.page-logo-center {
+  display: flex;
+  justify-content: center;
+
+}
+
+.page-logo {
+  height: 100px;
+  width: auto;
+}
+
 /* INTRO */
 .intro {
-  margin-top: 120px;
+  margin-top: 40px;
   padding: 0 20px;
 }
 

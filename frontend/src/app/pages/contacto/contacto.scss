@@ -2,11 +2,27 @@
   display: block;
 }
 
+/* LOGO */
+.page-logo-center {
+  display: flex;
+  justify-content: center;
+
+}
+
+.page-logo {
+  height: 100px;
+  width: auto;
+}
+
 /* HERO */
 .contacto-hero {
-  margin-top: 80px;
+  margin-top: 20px;
   border-bottom: 1px solid var(--color-accent);
-  padding: 50px 0 25px;
+  padding: 30px 0 25px;
+
+  .section-title {
+    margin-bottom: 14px;
+  }
 }
 
 /* MAIN */

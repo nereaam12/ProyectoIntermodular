@@ -1,100 +1,60 @@
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="contacto-hero text-center">
   <div class="container">
-    <h1 class="section-title">{{ 'contacto.title' | translate }}</h1>
-    <p class="section-subtitle">{{ 'contacto.subtitle' | translate }}</p>
+    <h1 class="contacto-title">CONTACTO</h1>
+    <p class="contacto-subtitle">Hablemos sobre tu próximo proyecto</p>
   </div>
 </section>
 
-<!-- MAIN -->
+<!-- ================= MAIN ================= -->
 <main class="contacto-main">
   <div class="container">
     <div class="row contacto-row">
       <!-- FORMULARIO -->
       <div class="col-lg-6 contacto-col-left">
-        @if (submitted()) {
-          <div class="success-message">
-            <i class="bi bi-check-circle"></i>
-            <p>{{ 'contacto.successMessage' | translate }}</p>
+        <form>
+          <div class="mb-4">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control custom-input" />
           </div>
-        } @else {
-          <form (submit)="onSubmit($event)">
-            @let data = formData();
 
-            <div class="mb-4">
-              <label class="form-label">{{ 'contacto.labelName' | translate }}</label>
-              <input
-                type="text"
-                class="form-control custom-input"
-                [value]="data.nombre"
-                (input)="updateField('nombre', $event)"
-                required
-              />
-            </div>
+          <div class="mb-4">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control custom-input" />
+          </div>
 
-            <div class="mb-4">
-              <label class="form-label">{{ 'contacto.labelEmail' | translate }}</label>
-              <input
-                type="email"
-                class="form-control custom-input"
-                [value]="data.email"
-                (input)="updateField('email', $event)"
-                required
-              />
-            </div>
+          <div class="mb-4">
+            <label class="form-label">Teléfono</label>
+            <input type="tel" class="form-control custom-input" />
+          </div>
 
-            <div class="mb-4">
-              <label class="form-label">{{ 'contacto.labelPhone' | translate }}</label>
-              <input
-                type="tel"
-                class="form-control custom-input"
-                [value]="data.telefono"
-                (input)="updateField('telefono', $event)"
-              />
-            </div>
+          <div class="mb-4">
+            <label class="form-label">Mensaje</label>
+            <textarea rows="4" class="form-control custom-input"></textarea>
+          </div>
 
-            <div class="mb-4">
-              <label class="form-label">{{ 'contacto.labelMessage' | translate }}</label>
-              <textarea
-                rows="4"
-                class="form-control custom-input"
-                [value]="data.mensaje"
-                (input)="updateField('mensaje', $event)"
-                required
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="btn btn-accent"
-              [disabled]="!isFormValid() || isSubmitting()"
-            >
-              @if (isSubmitting()) {
-                {{ 'contacto.submitting' | translate }}
-              } @else {
-                {{ 'contacto.submit' | translate }}
-              }
-            </button>
-          </form>
-        }
+          <button type="submit" class="btn custom-btn">Enviar mensaje</button>
+        </form>
       </div>
 
-      <!-- INFORMACION -->
+      <!-- INFORMACIÓN -->
       <div class="col-lg-6 contacto-col-right contacto-info">
-        <h4>{{ 'contacto.studioName' | translate }}</h4>
+        <h4>Estudio Ruiz de la Prada</h4>
+
         <p>
-          {{ 'contacto.address' | translate }}<br />
-          {{ 'contacto.city' | translate }}
+          Carrer de la Marina Baixa, 3, ESCALERA 14 PUERTA 9, Campanar,<br />
+          46015 València, Valencia
         </p>
+
         <p>
-          {{ 'contacto.phone' | translate }}<br />
-          {{ 'contacto.email' | translate }}
+          +34 600 000 000<br />
+          info@ruizdelaprada.es
         </p>
+
         <div class="contacto-map">
           <iframe
             src="https://www.google.com/maps?q=Carrer+de+la+Marina+Baixa,+3,+Campanar,+46015+Val%C3%A8ncia,+Valencia&output=embed"
             loading="lazy"
-            [title]="'contacto.mapTitle' | translate"
           >
           </iframe>
         </div>

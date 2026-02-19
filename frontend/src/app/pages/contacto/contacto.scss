@@ -63,6 +63,29 @@ textarea.custom-input {
   resize: none;
 }
 
+/* BOTÓN */
+.custom-btn {
+  margin-top: 25px;
+  padding: 12px 40px;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
 /* SUCCESS MESSAGE */
 .success-message {
   display: flex;

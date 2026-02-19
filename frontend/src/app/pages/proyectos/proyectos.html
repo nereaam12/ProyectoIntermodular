@@ -1,14 +1,14 @@
 <header class="proyectos-hero">
   <div class="container py-5 text-center">
-    <h1 class="section-title">{{ 'proyectos.title' | translate }}</h1>
-    <p class="section-subtitle mb-4">{{ 'proyectos.subtitle' | translate }}</p>
+    <h1 class="section-title">PROYECTOS</h1>
+    <p class="section-subtitle mb-4">Selección de trabajos residenciales y de alta gama</p>
 
     <!-- Buscador reactivo -->
     <div class="search-box">
       <input
         type="text"
         class="search-input"
-        [placeholder]="'proyectos.searchPlaceholder' | translate"
+        placeholder="Buscar proyecto..."
         [value]="filterText()"
         (input)="onFilter($event)"
       />
@@ -17,31 +17,60 @@
 </header>
 
 <main class="container proyectos-main">
-  @let items = filteredProyectos();
-
-  @if (items.length > 0) {
-    <section class="row g-4">
-      @for (p of items; track p.nameKey) {
-        <article class="col-12 col-sm-6 col-lg-4">
-          <a
-            class="proyecto-card"
-            href="#"
-            [attr.aria-label]="
-              ('proyectos.viewProject' | translate) + ' ' + (p.nameKey | translate)
-            "
-          >
-            <img [src]="p.img" class="proyecto-img" [alt]="p.nameKey | translate" />
-            <div class="proyecto-overlay">
-              <h2 class="proyecto-name">{{ p.nameKey | translate }}</h2>
-              <p class="proyecto-meta">{{ p.metaKey | translate }}</p>
-            </div>
-          </a>
-        </article>
-      }
-    </section>
-  } @else {
-    <div class="empty-state text-center py-5">
-      <p class="section-subtitle">{{ 'proyectos.emptyState' | translate }} "{{ filterText() }}"</p>
-    </div>
-  }
+  <section class="row g-4">
+    <article class="col-12 col-sm-6 col-lg-4">
+      <a class="proyecto-card" href="#" aria-label="Ver proyecto 1">
+        <img src="img/proyectos/1.png" class="proyecto-img" alt="Proyecto 1" />
+        <div class="proyecto-overlay">
+          <h2 class="proyecto-name">Proyecto 1</h2>
+          <p class="proyecto-meta">Vivienda · 2024</p>
+        </div>
+      </a>
+    </article>
+    <article class="col-12 col-sm-6 col-lg-4">
+      <a class="proyecto-card" href="#" aria-label="Ver proyecto 2">
+        <img src="img/proyectos/2.png" class="proyecto-img" alt="Proyecto 2" />
+        <div class="proyecto-overlay">
+          <h2 class="proyecto-name">Proyecto 2</h2>
+          <p class="proyecto-meta">Reforma · 2023</p>
+        </div>
+      </a>
+    </article>
+    <article class="col-12 col-sm-6 col-lg-4">
+      <a class="proyecto-card" href="#" aria-label="Ver proyecto 3">
+        <img src="img/proyectos/3.png" class="proyecto-img" alt="Proyecto 3" />
+        <div class="proyecto-overlay">
+          <h2 class="proyecto-name">Proyecto 3</h2>
+          <p class="proyecto-meta">Interiorismo · 2022</p>
+        </div>
+      </a>
+    </article>
+    <article class="col-12 col-sm-6 col-lg-4">
+      <a class="proyecto-card" href="#" aria-label="Ver proyecto 4">
+        <img src="img/proyectos/4.png" class="proyecto-img" alt="Proyecto 4" />
+        <div class="proyecto-overlay">
+          <h2 class="proyecto-name">Proyecto 4</h2>
+          <p class="proyecto-meta">Vivienda · 2021</p>
+        </div>
+      </a>
+    </article>
+    <article class="col-12 col-sm-6 col-lg-4">
+      <a class="proyecto-card" href="#" aria-label="Ver proyecto 5">
+        <img src="img/proyectos/5.png" class="proyecto-img" alt="Proyecto 5" />
+        <div class="proyecto-overlay">
+          <h2 class="proyecto-name">Proyecto 5</h2>
+          <p class="proyecto-meta">Obra nueva · 2020</p>
+        </div>
+      </a>
+    </article>
+    <article class="col-12 col-sm-6 col-lg-4">
+      <a class="proyecto-card" href="#" aria-label="Ver proyecto 6">
+        <img src="img/proyectos/6.png" class="proyecto-img" alt="Proyecto 6" />
+        <div class="proyecto-overlay">
+          <h2 class="proyecto-name">Proyecto 6</h2>
+          <p class="proyecto-meta">Paisajismo · 2019</p>
+        </div>
+      </a>
+    </article>
+  </section>
 </main>

@@ -1,19 +1,18 @@
 <!-- ===== HERO CON CARRUSEL ===== -->
 <header class="index-hero">
-  <!-- Imágenes reales del carrusel para máxima nitidez -->
   @for (img of heroImages(); track img; let i = $index) {
     <img
       [src]="img"
       class="hero-slide"
       [class.active]="i === currentIndex()"
-      [alt]="('inicio.imageLabel' | translate) + ' ' + (i + 1)"
+      [alt]="'Imagen ' + (i + 1)"
       loading="eager"
       fetchpriority="high"
     />
   }
 
   <div class="index-hero-center">
-    <img src="img/logoRuizBlanco.png" [alt]="'inicio.heroAlt' | translate" class="logo" />
+    <img src="img/logoRuizBlanco.png" alt="Logo Ruiz de la Prada" class="logo" />
   </div>
 
   <!-- Indicadores del carrusel -->
@@ -23,39 +22,55 @@
         class="indicator"
         [class.active]="i === currentIndex()"
         (click)="currentIndex.set(i)"
-        [attr.aria-label]="('inicio.imageLabel' | translate) + ' ' + (i + 1)"
+        [attr.aria-label]="'Imagen ' + (i + 1)"
       ></button>
     }
   </div>
 </header>
 
-<div class="index-main">
+<main class="index-main">
   <!-- ========= PROYECTOS ========= -->
   <section class="index-section">
     <div class="container">
-      <div class="section-head text-center">
-        <h2 class="section-title">{{ 'inicio.proyectos.title' | translate }}</h2>
-        <p class="section-subtitle">{{ 'inicio.proyectos.subtitle' | translate }}</p>
+      <div class="index-section-head">
+        <h2 class="index-section-title">PROYECTOS</h2>
+        <p class="index-section-subtitle">Selección de viviendas y reformas recientes</p>
       </div>
 
       <div class="row g-4">
-        @for (p of proyectos(); track p.nameKey) {
-          <div class="col-lg-4 col-md-6">
-            <a class="proyecto-card" routerLink="/proyectos">
-              <img [src]="p.img" class="proyecto-img" [alt]="p.nameKey | translate" />
-              <div class="proyecto-overlay">
-                <h3 class="proyecto-name">{{ p.nameKey | translate }}</h3>
-                <p class="proyecto-meta">{{ p.metaKey | translate }}</p>
-              </div>
-            </a>
-          </div>
-        }
+        <div class="col-lg-4 col-md-6">
+          <a class="proyecto-card" href="#">
+            <img src="img/proyectos/1.png" class="proyecto-img" alt="Proyecto 1" />
+            <div class="proyecto-overlay">
+              <h3 class="proyecto-name">Proyecto 1</h3>
+              <p class="proyecto-meta">Vivienda · 2024</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <a class="proyecto-card" href="#">
+            <img src="img/proyectos/2.png" class="proyecto-img" alt="Proyecto 2" />
+            <div class="proyecto-overlay">
+              <h3 class="proyecto-name">Proyecto 2</h3>
+              <p class="proyecto-meta">Reforma · 2023</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <a class="proyecto-card" href="#">
+            <img src="img/proyectos/3.png" class="proyecto-img" alt="Proyecto 3" />
+            <div class="proyecto-overlay">
+              <h3 class="proyecto-name">Proyecto 3</h3>
+              <p class="proyecto-meta">Interiorismo · 2022</p>
+            </div>
+          </a>
+        </div>
       </div>
 
-      <div class="section-cta text-center">
-        <a routerLink="/proyectos" class="btn btn-custom">{{
-          'inicio.proyectos.seeMore' | translate
-        }}</a>
+      <div class="index-cta">
+        <a routerLink="/proyectos" class="btn index-btn">Ver más</a>
       </div>
     </div>
   </section>
@@ -63,9 +78,9 @@
   <!-- ========= ESTUDIO ========= -->
   <section class="index-section index-section-alt">
     <div class="container">
-      <div class="section-head text-center">
-        <h2 class="section-title">{{ 'inicio.estudio.title' | translate }}</h2>
-        <p class="section-subtitle">{{ 'inicio.estudio.subtitle' | translate }}</p>
+      <div class="index-section-head">
+        <h2 class="index-section-title">ESTUDIO</h2>
+        <p class="index-section-subtitle">Equipo, enfoque y trayectoria</p>
       </div>
 
       <div class="row g-4 align-items-stretch">
@@ -74,12 +89,12 @@
             <img
               src="https://www.madridiario.es/fotos/1/222902_1_1.jpg"
               class="feature-img"
-              [alt]="'inicio.estudio.title' | translate"
+              alt="Estudio"
             />
             <div class="feature-body">
-              <h3 class="feature-title">{{ 'inicio.estudio.cardTitle' | translate }}</h3>
-              <p class="feature-text">{{ 'inicio.estudio.cardText' | translate }}</p>
-              <span class="feature-link">{{ 'inicio.estudio.cardLink' | translate }} &rarr;</span>
+              <h3 class="feature-title">Conoce el estudio</h3>
+              <p class="feature-text">Una arquitectura precisa, sobria y construida para durar.</p>
+              <span class="feature-link">Ver estudio →</span>
             </div>
           </a>
         </div>
@@ -114,37 +129,63 @@
   </section>
 
   <!-- ========= NOVEDADES ========= -->
-  @defer (on viewport) {
-    <section class="index-section">
-      <div class="container">
-        <div class="section-head text-center">
-          <h2 class="section-title">{{ 'inicio.novedades.title' | translate }}</h2>
-          <p class="section-subtitle">{{ 'inicio.novedades.subtitle' | translate }}</p>
-        </div>
+  <section class="index-section">
+    <div class="container">
+      <div class="index-section-head">
+        <h2 class="index-section-title">NOVEDADES</h2>
+        <p class="index-section-subtitle">Noticias, publicaciones y avances de obra</p>
+      </div>
 
-        <div class="row g-4">
-          @for (n of novedades(); track n.titleKey) {
-            <div class="col-lg-4 col-md-6">
-              <a class="news-card" routerLink="/novedades">
-                <img [src]="n.img" class="news-img" [alt]="n.titleKey | translate" />
-                <div class="news-body">
-                  <p class="news-kicker">{{ n.kickerKey | translate }}</p>
-                  <h3 class="news-title">{{ n.titleKey | translate }}</h3>
-                  <p class="news-text">{{ n.textKey | translate }}</p>
-                </div>
-              </a>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a class="news-card" routerLink="/novedades">
+            <img
+              src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png"
+              class="news-img"
+              alt=""
+            />
+            <div class="news-body">
+              <p class="news-kicker">Actualidad</p>
+              <h3 class="news-title">Nueva entrega de proyecto</h3>
+              <p class="news-text">Finalizamos fase de acabados y puesta en marcha.</p>
             </div>
-          }
+          </a>
         </div>
 
-        <div class="section-cta text-center">
-          <a routerLink="/novedades" class="btn btn-custom">{{
-            'inicio.novedades.seeMore' | translate
-          }}</a>
+        <div class="col-lg-4 col-md-6">
+          <a class="news-card" routerLink="/novedades">
+            <img
+              src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png"
+              class="news-img"
+              alt=""
+            />
+            <div class="news-body">
+              <p class="news-kicker">Obra</p>
+              <h3 class="news-title">Avance en construcción</h3>
+              <p class="news-text">Estructura y envolvente completadas.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <a class="news-card" routerLink="/novedades">
+            <img
+              src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png"
+              class="news-img"
+              alt=""
+            />
+            <div class="news-body">
+              <p class="news-kicker">Prensa</p>
+              <h3 class="news-title">Publicación destacada</h3>
+              <p class="news-text">Selección en medios del sector.</p>
+            </div>
+          </a>
         </div>
       </div>
-    </section>
-  } @placeholder {
-    <div class="section-placeholder"></div>
-  }
-</div>
+
+      <div class="index-cta">
+        <a routerLink="/novedades" class="btn index-btn">Ver más</a>
+      </div>
+    </div>
+  </section>
+</main>

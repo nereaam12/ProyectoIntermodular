@@ -1,5 +1,4 @@
-import { Component, signal, inject } from '@angular/core';
-import { TranslationService, TranslatePipe } from '../../core/i18n';
+import { Component, signal } from '@angular/core';
 
 interface SocialLink {
   icon: string;
@@ -9,12 +8,10 @@ interface SocialLink {
 
 @Component({
   selector: 'app-footer',
-  imports: [TranslatePipe],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
 export class Footer {
-  protected readonly i18n = inject(TranslationService);
   protected readonly year = signal(new Date().getFullYear());
 
   protected readonly socialLinks = signal<SocialLink[]>([

@@ -1,46 +1,166 @@
-<div class="container-fluid px-0">
-  <div class="container py-4">
-    <h1 class="section-title text-center">{{ 'novedades.title' | translate }}</h1>
-    <p class="section-subtitle text-center color-border pb-3">
-      {{ 'novedades.subtitle' | translate }}
-    </p>
+<main class="py-4">
+  <div class="container">
+    <h1 class="mb-2 text-center titles">Novedades</h1>
+    <p class="pb-3 text-muted text-center color-border subtitles">Últimas novedades del estudio</p>
 
-    <!-- Jumbotron destacado -->
-    @let featured = featuredNews();
-    <section class="jumbotron rounded-4 d-flex flex-column justify-content-end">
-      <img [src]="featured.img" class="jumbotron-img" [alt]="featured.titleKey | translate" />
+    <section class="jumbotron p-4 p-md-5 rounded-4 d-flex flex-column justify-content-end">
+      <img src="img/proyectos/2.png" class="jumbotron-img" alt="Novedades destacadas" />
       <div class="glass rounded-4 mb-3">
-        <h2 class="display-6 mx-3 my-3 fw-normal">{{ featured.titleKey | translate }}</h2>
-        <p class="mx-3 my-3 section-subtitle">{{ featured.textKey | translate }}</p>
+        <h2 class="display-6 mx-3 my-3 titles">Finalizada la construcción de villa moderna</h2>
+        <p class="mx-3 my-3 subtitles">
+          Hemos completado la entrega del proyecto tras la fase final de acabados y puesta en
+          marcha.
+        </p>
       </div>
-      <a class="btn btn-accent align-self-end" href="#"
-        >{{ 'novedades.readMore' | translate }} &rarr;</a
+
+      <button
+        class="btn align-self-end text-end decoration"
+        data-bs-toggle="modal"
+        data-bs-target="#modalFeatured"
       >
+        Leer la noticia →
+      </button>
     </section>
 
-    <!-- Grid de noticias -->
-    <section class="mt-5">
+    <section class="mt-4">
       <div class="row row-cols-1 row-cols-md-3 g-4">
-        @for (item of news(); track item.titleKey) {
-          <div class="col">
-            <article class="news-card h-100">
-              <img [src]="item.img" class="card-img-top" [alt]="item.titleKey | translate" />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">{{ item.titleKey | translate }}</h5>
-                <p class="card-text">{{ item.textKey | translate }}</p>
-                <div class="mt-auto text-end">
-                  <a class="btn btn-accent" href="#"
-                    >{{ 'novedades.readMore' | translate }} &rarr;</a
-                  >
-                </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 fontcard">
+            <img src="img/proyectos/1.png" class="card-img-top" alt="..." />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Nueva entrega de proyecto</h5>
+              <p class="card-text">
+                Finalizamos fase de acabados y puesta en marcha de la vivienda unifamiliar.
+              </p>
+              <div class="mt-auto text-end">
+                <button class="btn decoration" data-bs-toggle="modal" data-bs-target="#modal1">
+                  Leer la noticia →
+                </button>
               </div>
-              <div class="card-footer">
-                <small>{{ item.dateKey | translate }}</small>
-              </div>
-            </article>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Hace 3 minutos</small>
+            </div>
           </div>
-        }
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100 fontcard">
+            <img src="img/proyectos/2.png" class="card-img-top" alt="..." />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Avance en construcción</h5>
+              <p class="card-text">
+                Estructura y envolvente completadas en el proyecto residencial.
+              </p>
+              <div class="mt-auto text-end">
+                <button class="btn decoration" data-bs-toggle="modal" data-bs-target="#modal2">
+                  Leer la noticia →
+                </button>
+              </div>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Hace 3 minutos</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div class="card h-100 fontcard">
+            <img src="img/proyectos/3.png" class="card-img-top" alt="..." />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Publicación destacada</h5>
+              <p class="card-text">
+                Selección en medios especializados del sector de la arquitectura.
+              </p>
+              <div class="mt-auto text-end">
+                <button class="btn decoration" data-bs-toggle="modal" data-bs-target="#modal3">
+                  Leer la noticia →
+                </button>
+              </div>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Hace 3 minutos</small>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+  </div>
+</main>
+
+<!-- Modal Destacada -->
+<div class="modal fade" id="modalFeatured" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <img src="img/proyectos/2.png" class="modal-img" alt="Villa moderna" />
+      <div class="modal-body p-4">
+        <h2 class="modal-title mb-3">Finalizada la construcción de villa moderna</h2>
+        <p class="modal-text">
+          Hemos completado la entrega del proyecto tras la fase final de acabados y puesta en
+          marcha. El resultado refleja meses de trabajo enfocado en cada detalle, desde los
+          materiales de revestimiento hasta la integración paisajística.
+        </p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn decoration" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Card 1 -->
+<div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <img src="img/proyectos/1.png" class="modal-img" alt="Nuevo proyecto" />
+      <div class="modal-body p-4">
+        <h2 class="modal-title mb-3">Nueva entrega de proyecto</h2>
+        <p class="modal-text">
+          Finalizamos fase de acabados y puesta en marcha de la vivienda unifamiliar. Cada espacio
+          ha sido diseñado para maximizar la luz natural y la funcionalidad del día a día.
+        </p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn decoration" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Card 2 -->
+<div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <img src="img/proyectos/2.png" class="modal-img" alt="Avance construcción" />
+      <div class="modal-body p-4">
+        <h2 class="modal-title mb-3">Avance en construcción</h2>
+        <p class="modal-text">
+          Estructura y envolvente completadas en el proyecto residencial. La fase de instalaciones y
+          acabados interiores avanza según el calendario previsto.
+        </p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn decoration" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Card 3 -->
+<div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <img src="img/proyectos/3.png" class="modal-img" alt="Publicación" />
+      <div class="modal-body p-4">
+        <h2 class="modal-title mb-3">Publicación destacada</h2>
+        <p class="modal-text">
+          Selección en medios especializados del sector de la arquitectura. Nuestro último proyecto
+          residencial ha sido reconocido por su integración con el entorno.
+        </p>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn decoration" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
   </div>
 </div>

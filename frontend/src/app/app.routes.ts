@@ -1,38 +1,18 @@
 import { Routes } from '@angular/router';
+import { Inicio } from './pages/inicio/inicio';
+import { Proyectos } from './pages/proyectos/proyectos';
+import { Estudio } from './pages/estudio/estudio';
+import { Novedades } from './pages/novedades/novedades';
+import { Contacto } from './pages/contacto/contacto';
+import { Login } from './components/login/login';
 
 export const routes: Routes = [
-  {
-    path: '',
-    loadComponent: () => import('./pages/inicio/inicio').then(m => m.Inicio),
-    title: 'Inicio | Ruiz de la Prada',
-  },
-  {
-    path: 'proyectos',
-    loadComponent: () => import('./pages/proyectos/proyectos').then(m => m.Proyectos),
-    title: 'Proyectos | Ruiz de la Prada',
-  },
-  {
-    path: 'estudio',
-    loadComponent: () => import('./pages/estudio/estudio').then(m => m.Estudio),
-    title: 'Estudio | Ruiz de la Prada',
-  },
-  {
-    path: 'novedades',
-    loadComponent: () => import('./pages/novedades/novedades').then(m => m.Novedades),
-    title: 'Novedades | Ruiz de la Prada',
-  },
-  {
-    path: 'contacto',
-    loadComponent: () => import('./pages/contacto/contacto').then(m => m.Contacto),
-    title: 'Contacto | Ruiz de la Prada',
-  },
-  {
-    path: 'login',
-    loadComponent: () => import('./components/login/login').then(m => m.Login),
-    title: 'Login',
-  },
-  {
-    path: '**',
-    redirectTo: '',
-  },
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  { path: 'inicio', component: Inicio},
+  { path: 'proyectos', component: Proyectos, },
+  { path: 'estudio', component: Estudio, },
+  { path: 'novedades', component: Novedades, },
+  { path: 'contacto', component: Contacto, },
+  { path: 'login', component: Login, },
+  { path: '**', redirectTo: 'inicio' },
 ];

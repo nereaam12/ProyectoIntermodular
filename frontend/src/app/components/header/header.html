@@ -29,9 +29,12 @@
       <li>
         <a routerLink="/contacto" routerLinkActive="active" (click)="closeMenu()">CONTACTO</a>
       </li>
-      <li>
-        <a routerLink="/login" routerLinkActive="active" (click)="closeMenu()">LOGIN</a>
-      </li>
     </ul>
+
+    <div class="menu-login">
+      <a routerLink="/login" routerLinkActive="active" class="login-btn" (click)="closeMenu()"
+        >LOGIN</a
+      >
+    </div>
   </nav>
 }

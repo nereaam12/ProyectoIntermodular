@@ -1,13 +1,21 @@
+<!-- LOGO -->
+<div class="page-logo-center">
+  <img src="img/logoRuiz.png" alt="Logo Ruiz de la Prada" class="page-logo" />
+</div>
+
 <main class="py-4">
   <div class="container">
-    <h1 class="mb-2 text-center titles">Novedades</h1>
-    <p class="pb-3 text-muted text-center color-border subtitles">Últimas novedades del estudio</p>
+    <h1 class="mb-2 text-center section-title">Noticias</h1>
+    <p class="pb-3 text-muted text-center color-border section-subtitle">
+      Últimas novedades del estudio
+    </p>
 
     <section class="jumbotron p-4 p-md-5 rounded-4 d-flex flex-column justify-content-end">
-      <img src="img/proyectos/2.png" class="jumbotron-img" alt="Novedades destacadas" />
+      <img src="img/noticias/noticia1.jpeg" class="jumbotron-img" alt="Nueva construccion finalizada" />
+
       <div class="glass rounded-4 mb-3">
-        <h2 class="display-6 mx-3 my-3 titles">Finalizada la construcción de villa moderna</h2>
-        <p class="mx-3 my-3 subtitles">
+        <h2 class="display-6 mx-3 my-3">Finalizada la construcción de vivienda unifamiliar</h2>
+        <p class="mx-3 my-3">
           Hemos completado la entrega del proyecto tras la fase final de acabados y puesta en
           marcha.
         </p>
@@ -22,6 +30,7 @@
       </button>
     </section>
 
+    <!-- LAS 3 CARDS SE QUEDAN EXACTAMENTE IGUAL -->
     <section class="mt-4">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col-lg-4 col-md-6 col-sm-12">
@@ -88,76 +97,47 @@
   </div>
 </main>
 
-<!-- Modal Destacada -->
+<!-- MODAL DESTACADO -->
 <div class="modal fade" id="modalFeatured" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content border-0">
-      <img src="img/proyectos/2.png" class="modal-img" alt="Villa moderna" />
+      <!-- VIDEO -->
+      <div class="ratio ratio-16x9">
+        <video controls autoplay muted>
+          <source src="img/video/noticia1.mp4" type="video/mp4" />
+        </video>
+      </div>
+
       <div class="modal-body p-4">
-        <h2 class="modal-title mb-3">Finalizada la construcción de villa moderna</h2>
+        <h2 class="modal-title mb-3">Finalizada la construcción de Vivienda Mirador</h2>
+
         <p class="modal-text">
           Hemos completado la entrega del proyecto tras la fase final de acabados y puesta en
           marcha. El resultado refleja meses de trabajo enfocado en cada detalle, desde los
           materiales de revestimiento hasta la integración paisajística.
         </p>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn decoration" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Modal Card 1 -->
-<div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0">
-      <img src="img/proyectos/1.png" class="modal-img" alt="Nuevo proyecto" />
-      <div class="modal-body p-4">
-        <h2 class="modal-title mb-3">Nueva entrega de proyecto</h2>
-        <p class="modal-text">
-          Finalizamos fase de acabados y puesta en marcha de la vivienda unifamiliar. Cada espacio
-          ha sido diseñado para maximizar la luz natural y la funcionalidad del día a día.
+        <!-- CONCEPTO ARQUITECTÓNICO -->
+        <p class="concept-text mt-4">
+          El proyecto se concibe como un volumen limpio y compacto que se abre hacia el paisaje
+          mediterráneo, priorizando la continuidad interior-exterior y la entrada de luz natural.
         </p>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn decoration" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Modal Card 2 -->
-<div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0">
-      <img src="img/proyectos/2.png" class="modal-img" alt="Avance construcción" />
-      <div class="modal-body p-4">
-        <h2 class="modal-title mb-3">Avance en construcción</h2>
-        <p class="modal-text">
-          Estructura y envolvente completadas en el proyecto residencial. La fase de instalaciones y
-          acabados interiores avanza según el calendario previsto.
-        </p>
+        <!-- FICHA TÉCNICA -->
+        <div class="project-data mt-4">
+          <p><strong>Ubicación:</strong> Jávea, Alicante, España</p>
+          <p><strong>Superficie construida:</strong> 285 m²</p>
+          <p><strong>Parcela:</strong> 1.050 m²</p>
+          <p><strong>Año de finalización:</strong> 2024</p>
+          <p><strong>Tipología:</strong> Vivienda unifamiliar aislada</p>
+          <p>
+            <strong>Programa:</strong> 4 dormitorios · 3 baños · salón-comedor abierto · cocina
+            integrada
+          </p>
+          <p><strong>Eficiencia energética:</strong> Calificación A</p>
+        </div>
       </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn decoration" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Modal Card 3 -->
-<div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0">
-      <img src="img/proyectos/3.png" class="modal-img" alt="Publicación" />
-      <div class="modal-body p-4">
-        <h2 class="modal-title mb-3">Publicación destacada</h2>
-        <p class="modal-text">
-          Selección en medios especializados del sector de la arquitectura. Nuestro último proyecto
-          residencial ha sido reconocido por su integración con el entorno.
-        </p>
-      </div>
       <div class="modal-footer border-0">
         <button type="button" class="btn decoration" data-bs-dismiss="modal">Cerrar</button>
       </div>

@@ -1,76 +1,153 @@
+<!-- LOGO -->
+<div class="page-logo-center">
+  <img src="img/logoRuiz.png" alt="Logo Ruiz de la Prada" class="page-logo" />
+</div>
+
 <header class="proyectos-hero">
   <div class="container py-5 text-center">
     <h1 class="section-title">PROYECTOS</h1>
-    <p class="section-subtitle mb-4">Selección de trabajos residenciales y de alta gama</p>
-
-    <!-- Buscador reactivo -->
-    <div class="search-box">
-      <input
-        type="text"
-        class="search-input"
-        placeholder="Buscar proyecto..."
-        [value]="filterText()"
-        (input)="onFilter($event)"
-      />
-    </div>
+    <p class="section-subtitle mb-4">
+      Selección de trabajos residenciales y de alta gama
+    </p>
   </div>
 </header>
 
 <main class="container proyectos-main">
   <section class="row g-4">
+
+    <!-- PROYECTO 1 -->
     <article class="col-12 col-sm-6 col-lg-4">
-      <a class="proyecto-card" href="#" aria-label="Ver proyecto 1">
+      <div class="proyecto-card"
+           (click)="openProject({
+          name: 'Proyecto 1',
+          meta: 'Vivienda · 2024',
+          image: 'img/proyectos/1.png',
+          description: 'Vivienda unifamiliar contemporánea con grandes ventanales y conexión interior-exterior.'
+        })">
+
         <img src="img/proyectos/1.png" class="proyecto-img" alt="Proyecto 1" />
         <div class="proyecto-overlay">
           <h2 class="proyecto-name">Proyecto 1</h2>
           <p class="proyecto-meta">Vivienda · 2024</p>
         </div>
-      </a>
+
+      </div>
     </article>
+
+    <!-- PROYECTO 2 -->
     <article class="col-12 col-sm-6 col-lg-4">
-      <a class="proyecto-card" href="#" aria-label="Ver proyecto 2">
+      <div class="proyecto-card"
+           (click)="openProject({
+          name: 'Proyecto 2',
+          meta: 'Reforma · 2023',
+          image: 'img/proyectos/2.png',
+          description: 'Reforma integral con diseño minimalista y materiales naturales.'
+        })">
+
         <img src="img/proyectos/2.png" class="proyecto-img" alt="Proyecto 2" />
         <div class="proyecto-overlay">
           <h2 class="proyecto-name">Proyecto 2</h2>
           <p class="proyecto-meta">Reforma · 2023</p>
         </div>
-      </a>
+
+      </div>
     </article>
+
+    <!-- PROYECTO 3 -->
     <article class="col-12 col-sm-6 col-lg-4">
-      <a class="proyecto-card" href="#" aria-label="Ver proyecto 3">
+      <div class="proyecto-card"
+           (click)="openProject({
+          name: 'Proyecto 3',
+          meta: 'Interiorismo · 2022',
+          image: 'img/proyectos/3.png',
+          description: 'Proyecto de interiorismo con enfoque en iluminación y texturas.'
+        })">
+
         <img src="img/proyectos/3.png" class="proyecto-img" alt="Proyecto 3" />
         <div class="proyecto-overlay">
           <h2 class="proyecto-name">Proyecto 3</h2>
           <p class="proyecto-meta">Interiorismo · 2022</p>
         </div>
-      </a>
+
+      </div>
     </article>
+
+    <!-- PROYECTO 4 -->
     <article class="col-12 col-sm-6 col-lg-4">
-      <a class="proyecto-card" href="#" aria-label="Ver proyecto 4">
+      <div class="proyecto-card"
+           (click)="openProject({
+          name: 'Proyecto 4',
+          meta: 'Vivienda · 2021',
+          image: 'img/proyectos/4.png',
+          description: 'Diseño residencial con líneas puras y volumetría marcada.'
+        })">
+
         <img src="img/proyectos/4.png" class="proyecto-img" alt="Proyecto 4" />
         <div class="proyecto-overlay">
           <h2 class="proyecto-name">Proyecto 4</h2>
           <p class="proyecto-meta">Vivienda · 2021</p>
         </div>
-      </a>
+
+      </div>
     </article>
+
+    <!-- PROYECTO 5 -->
     <article class="col-12 col-sm-6 col-lg-4">
-      <a class="proyecto-card" href="#" aria-label="Ver proyecto 5">
+      <div class="proyecto-card"
+           (click)="openProject({
+          name: 'Proyecto 5',
+          meta: 'Obra nueva · 2020',
+          image: 'img/proyectos/5.png',
+          description: 'Proyecto de obra nueva con arquitectura abierta y luminosa.'
+        })">
+
         <img src="img/proyectos/5.png" class="proyecto-img" alt="Proyecto 5" />
         <div class="proyecto-overlay">
           <h2 class="proyecto-name">Proyecto 5</h2>
           <p class="proyecto-meta">Obra nueva · 2020</p>
         </div>
-      </a>
+
+      </div>
     </article>
+
+    <!-- PROYECTO 6 -->
     <article class="col-12 col-sm-6 col-lg-4">
-      <a class="proyecto-card" href="#" aria-label="Ver proyecto 6">
+      <div class="proyecto-card"
+           (click)="openProject({
+          name: 'Proyecto 6',
+          meta: 'Paisajismo · 2019',
+          image: 'img/proyectos/6.png',
+          description: 'Proyecto de paisajismo integrando arquitectura y entorno natural.'
+        })">
+
         <img src="img/proyectos/6.png" class="proyecto-img" alt="Proyecto 6" />
         <div class="proyecto-overlay">
           <h2 class="proyecto-name">Proyecto 6</h2>
           <p class="proyecto-meta">Paisajismo · 2019</p>
         </div>
-      </a>
+
+      </div>
     </article>
+
   </section>
 </main>
+
+<!-- VISTA DETALLE -->
+<section class="proyecto-detalle" *ngIf="selectedProject">
+  <div class="detalle-container">
+
+    <div class="detalle-img">
+      <img [src]="selectedProject.image" [alt]="selectedProject.name">
+    </div>
+
+    <div class="detalle-info">
+      <button class="cerrar" (click)="closeProject()">✕</button>
+      <h2>{{ selectedProject.name }}</h2>
+      <p class="meta">{{ selectedProject.meta }}</p>
+      <p class="descripcion">
+        {{ selectedProject.description }}
+      </p>
+    </div>
+
+  </div>
+</section>

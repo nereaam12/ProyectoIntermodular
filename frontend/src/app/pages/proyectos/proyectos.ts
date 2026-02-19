@@ -1,15 +1,23 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-proyectos',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './proyectos.html',
-  styleUrl: './proyectos.scss',
+  styleUrls: ['./proyectos.scss']
 })
 export class Proyectos {
-  protected readonly filterText = signal('');
 
-  onFilter(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    this.filterText.set(input.value);
+  selectedProject: any = null;
+
+  openProject(project: any) {
+    this.selectedProject = project;
   }
+
+  closeProject() {
+    this.selectedProject = null;
+  }
+
 }

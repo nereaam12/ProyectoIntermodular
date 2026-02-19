@@ -16,21 +16,19 @@ export class Login {
   errorMessage = '';
 
   reactiveForm = new FormGroup({
-    email: new FormControl('', { nonNullable: true }),
-    password: new FormControl('', { nonNullable: true })
+    email: new FormControl('', {nonNullable: true}),
+    password: new FormControl('', {nonNullable: true})
   });
 
   onSubmit(): void {
-    let data = this.reactiveForm.getRawValue();
+    const data = this.reactiveForm.getRawValue();
 
     this.authService.login(data.email, data.password).subscribe({
-      next: (response) => {
-        // Guardar el token
-        this.authService.saveToken(response.token);
-        // Redirigir al formulario
-        this.router.navigate(['/form']);
+      next: () => {
+        // Redirigir al backend Twig
+        window.location.href = 'http://localhost:8000/user';
       },
-      error: (err) => {
+      error: () => {
         this.errorMessage = 'Email o contraseña incorrectos';
       }
     });

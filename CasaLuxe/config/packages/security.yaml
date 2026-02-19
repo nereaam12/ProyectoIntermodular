@@ -12,33 +12,28 @@ security:
 
     # Firewalls (reglas de seguridad por rutas)
     firewalls:
-        # Desactivar seguridad para el profiler de desarrollo
         dev:
             pattern: ^/(_(profiler|wdt))/
             security: false
 
-        # Firewall para el endpoint de login
         login:
-            pattern: /api/login
+            pattern: ^/api/login
             stateless: true
             json_login:
-                # Ruta donde se envían las credenciales
                 check_path: /api/login_check
-                # Campos del JSON que contienen email y password
                 username_path: email
                 password_path: password
-                # Handlers de Lexik para generar el token
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
 
-        # Firewall para todas las rutas /api/* (excepto login)
         api:
-            pattern: ^/api
+            pattern: ^/
             stateless: true
-            jwt: ~  # Activar autenticación JWT
+            jwt: ~
 
     # Control de acceso (qué roles pueden acceder a qué rutas)
     access_control:
-        - { path: ^/api/users, roles: PUBLIC_ACCESS }
         - { path: ^/api/register, roles: PUBLIC_ACCESS }
-        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/user, roles: ROLE_ADMIN }
+        - { path: ^/, roles: IS_AUTHENTICATED_FULLY }

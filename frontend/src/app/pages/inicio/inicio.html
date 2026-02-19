@@ -34,42 +34,42 @@
     <div class="container">
       <div class="index-section-head">
         <h2 class="index-section-title">PROYECTOS</h2>
-        <p class="index-section-subtitle">Selección de viviendas y reformas recientes</p>
+        <p class="index-section-subtitle">Selección de viviendas y obras recientes</p>
       </div>
 
       <div class="row g-4">
         <div class="col-lg-4 col-md-6">
-          <a class="proyecto-card" href="#">
-            <img src="img/proyectos/1.png" class="proyecto-img" alt="Proyecto 1" />
+          <a class="proyecto-card" routerLink="/proyectos">
+            <img src="img/proyectos/4.png" class="proyecto-img" alt="Proyecto 1" />
             <div class="proyecto-overlay">
-              <h3 class="proyecto-name">Proyecto 1</h3>
-              <p class="proyecto-meta">Vivienda · 2024</p>
+              <h3 class="proyecto-name">Proyecto Villa Rafalet</h3>
+              <p class="proyecto-subname">Villa · 2024</p>
             </div>
           </a>
         </div>
 
         <div class="col-lg-4 col-md-6">
-          <a class="proyecto-card" href="#">
-            <img src="img/proyectos/2.png" class="proyecto-img" alt="Proyecto 2" />
+          <a class="proyecto-card" routerLink="/proyectos">
+            <img src="img/proyectos/3.png" class="proyecto-img" alt="Proyecto Villa Horizonte" />
             <div class="proyecto-overlay">
-              <h3 class="proyecto-name">Proyecto 2</h3>
-              <p class="proyecto-meta">Reforma · 2023</p>
+              <h3 class="proyecto-name">Proyecto Villa Horizonte</h3>
+              <p class="proyecto-subname">Jávea · 2023</p>
             </div>
           </a>
         </div>
 
         <div class="col-lg-4 col-md-6">
-          <a class="proyecto-card" href="#">
-            <img src="img/proyectos/3.png" class="proyecto-img" alt="Proyecto 3" />
+          <a class="proyecto-card" routerLink="/proyectos">
+            <img src="img/proyectos/6.png" class="proyecto-img" alt="Proyecto 3" />
             <div class="proyecto-overlay">
-              <h3 class="proyecto-name">Proyecto 3</h3>
-              <p class="proyecto-meta">Interiorismo · 2022</p>
+              <h3 class="proyecto-name">Proyecto Villa Bosque</h3>
+              <p class="proyecto-subname">Castellon · 2021</p>
             </div>
           </a>
         </div>
       </div>
 
-      <div class="index-cta">
+      <div class="index-vermas">
         <a routerLink="/proyectos" class="btn index-btn">Ver más</a>
       </div>
     </div>
@@ -86,11 +86,15 @@
       <div class="row g-4 align-items-stretch">
         <div class="col-lg-6">
           <a class="feature-card" routerLink="/estudio">
-            <img
-              src="https://www.madridiario.es/fotos/1/222902_1_1.jpg"
+            <video
               class="feature-img"
-              alt="Estudio"
-            />
+              autoplay
+              muted
+              loop
+              playsinline>
+              <source src="img/video/estudio.mp4" type="video/mp4">
+            </video>
+
             <div class="feature-body">
               <h3 class="feature-title">Conoce el estudio</h3>
               <p class="feature-text">Una arquitectura precisa, sobria y construida para durar.</p>
@@ -103,21 +107,21 @@
           <div class="row g-4">
             <div class="col-6">
               <img
-                src="https://www.madridiario.es/fotos/1/222902_1_1.jpg"
+                src="img/inicio/imagenestudio1.png"
                 class="grid-img"
                 alt=""
               />
             </div>
             <div class="col-6">
               <img
-                src="https://www.madridiario.es/fotos/1/222902_1_1.jpg"
+                src="img/logoRuiz.png"
                 class="grid-img"
                 alt=""
               />
             </div>
             <div class="col-12">
               <img
-                src="https://www.madridiario.es/fotos/1/222902_1_1.jpg"
+                src="img/inicio/inicioestudio2.png"
                 class="grid-img grid-img-wide"
                 alt=""
               />
@@ -140,7 +144,7 @@
         <div class="col-lg-4 col-md-6">
           <a class="news-card" routerLink="/novedades">
             <img
-              src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png"
+              src="img/noticias/noticia1.jpeg"
               class="news-img"
               alt=""
             />
@@ -155,14 +159,14 @@
         <div class="col-lg-4 col-md-6">
           <a class="news-card" routerLink="/novedades">
             <img
-              src="https://www.yunbitsoftware.com/blog/wp-content/uploads/2019/09/img_new.png"
+              src="img/noticias/javeacard.jpeg"
               class="news-img"
               alt=""
             />
             <div class="news-body">
               <p class="news-kicker">Obra</p>
-              <h3 class="news-title">Avance en construcción</h3>
-              <p class="news-text">Estructura y envolvente completadas.</p>
+              <h3 class="news-title">Residencial Jávea Hills Finalizado</h3>
+              <p class="news-text">Jávea, Alicante.</p>
             </div>
           </a>
         </div>
@@ -183,7 +187,7 @@
         </div>
       </div>
 
-      <div class="index-cta">
+      <div class="index-vermas">
         <a routerLink="/novedades" class="btn index-btn">Ver más</a>
       </div>
     </div>

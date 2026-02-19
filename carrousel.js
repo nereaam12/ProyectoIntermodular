@@ -1,8 +1,8 @@
 const images = [
     'img/proyectos/rafalet.png',
     'img/proyectos/villahorizonte.png',
-    'img/proyectos/3.png',
-    'img/proyectos/5.png',
+    'img/proyectos/villanocturna.jpg',
+    'img/proyectos/benaguacil.jpg',
 ];
 
 let index = 0;

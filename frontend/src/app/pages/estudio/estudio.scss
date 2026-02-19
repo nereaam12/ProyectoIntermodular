@@ -67,6 +67,7 @@
   max-width: 1280px;
   margin: 140px auto;
   padding: 0 40px;
+  margin-top: 250px;
 }
 
 /* PERFIL */
@@ -104,6 +105,8 @@
   text-align: center;
   margin-bottom: 100px;
   position: relative;
+  margin-top: 300px;
+
 
   &::after {
     content: '';
@@ -118,9 +121,10 @@
   }
 }
 
-.trajectory-lead {
+.trajectory-top {
   max-width: 500px;
-  margin: 0 auto 110px auto;
+  margin: 30px auto 110px auto;
+  text-align: center;
 
   h4 {
     font-size: 18px;

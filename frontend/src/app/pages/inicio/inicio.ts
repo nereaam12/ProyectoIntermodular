@@ -11,8 +11,8 @@ export class Inicio implements OnInit, OnDestroy {
   protected readonly heroImages = signal([
     'img/proyectos/rafalet.png',
     'img/proyectos/villahorizonte.png',
-    'img/inicio/iniciocarr.jpeg',
-    'img/proyectos/elmontecillo.jpg',
+    'img/inicio/iniciocarr3.png',
+    'img/inicio/iniciocarr4.png',
   ]);
   protected readonly currentIndex = signal(0);
 

@@ -67,7 +67,7 @@ class Project
         return $this;
     }
 
-    public function getUsers(): ?User
+    public function getUser(): ?User
     {
         return $this->user;
     }

@@ -9,8 +9,8 @@ import { RouterLink } from '@angular/router';
 })
 export class Inicio implements OnInit, OnDestroy {
   protected readonly heroImages = signal([
-    'img/proyectos/1.png',
-    'img/proyectos/2.png',
+    'img/proyectos/rafalet.png',
+    'img/proyectos/villahorizonte.png',
     'img/proyectos/3.png',
     'img/proyectos/5.png',
   ]);

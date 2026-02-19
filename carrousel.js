@@ -1,6 +1,6 @@
 const images = [
-    'img/proyectos/1.png',
-    'img/proyectos/2.png',
+    'img/proyectos/rafalet.png',
+    'img/proyectos/villahorizonte.png',
     'img/proyectos/3.png',
     'img/proyectos/5.png',
 ];

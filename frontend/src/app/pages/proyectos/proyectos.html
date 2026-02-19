@@ -15,119 +15,140 @@
 <main class="container proyectos-main">
   <section class="row g-4">
 
-    <!-- PROYECTO 1 -->
-    <article class="col-12 col-sm-6 col-lg-4">
-      <div class="proyecto-card"
-           (click)="openProject({
-          name: 'Proyecto 1',
-          meta: 'Vivienda · 2024',
-          image: 'img/proyectos/1.png',
-          description: 'Vivienda unifamiliar contemporánea con grandes ventanales y conexión interior-exterior.'
-        })">
+    <section class="row g-4">
 
-        <img src="img/proyectos/1.png" class="proyecto-img" alt="Proyecto 1" />
-        <div class="proyecto-overlay">
-          <h2 class="proyecto-name">Proyecto 1</h2>
-          <p class="proyecto-meta">Vivienda · 2024</p>
+      <!-- 1. VIVIENDA rafalet -->
+      <article class="col-12 col-sm-6 col-lg-4">
+        <div class="proyecto-card"
+             (click)="openProject({
+        name: 'Casa Rafalet',
+        meta: 'Jávea · 2024',
+        image: 'img/proyectos/rafalet.png',
+        description: 'Vivienda unifamiliar de líneas puras diseñada para abrirse completamente al paisaje mediterráneo.',
+      })">
+
+          <img src="img/proyectos/rafalet.png" class="proyecto-img" alt="Vivienda Mirador" />
+          <div class="proyecto-overlay">
+            <h2 class="proyecto-name">Vivienda Rafalet</h2>
+            <p class="proyecto-meta">Jávea · 2024</p>
+          </div>
+
         </div>
+      </article>
 
-      </div>
-    </article>
 
-    <!-- PROYECTO 2 -->
-    <article class="col-12 col-sm-6 col-lg-4">
-      <div class="proyecto-card"
-           (click)="openProject({
-          name: 'Proyecto 2',
-          meta: 'Reforma · 2023',
-          image: 'img/proyectos/2.png',
-          description: 'Reforma integral con diseño minimalista y materiales naturales.'
-        })">
+      <!-- 2. CASA Villa Horizonte -->
+      <article class="col-12 col-sm-6 col-lg-4">
+        <div class="proyecto-card"
+             (click)="openProject({
+        name: 'Villa Horizonte',
+        meta: 'Jávea · 2023',
+        image: 'img/proyectos/villahorizonte.png',
+        description: 'Vivienda contemporánea de líneas puras y volúmenes suspendidos, diseñada para potenciar la conexión visual con el entorno natural. La fachada combina planos macizos y grandes superficies acristaladas que permiten una transición fluida entre interior y exterior.'
+      })">
 
-        <img src="img/proyectos/2.png" class="proyecto-img" alt="Proyecto 2" />
-        <div class="proyecto-overlay">
-          <h2 class="proyecto-name">Proyecto 2</h2>
-          <p class="proyecto-meta">Reforma · 2023</p>
+          <img src="img/proyectos/villahorizonte.png" class="proyecto-img" alt="Casa Rafalet" />
+          <div class="proyecto-overlay">
+            <h2 class="proyecto-name">Villa Horizonte</h2>
+            <p class="proyecto-meta">Jávea · 2023</p>
+          </div>
+
         </div>
+      </article>
 
-      </div>
-    </article>
 
-    <!-- PROYECTO 3 -->
-    <article class="col-12 col-sm-6 col-lg-4">
-      <div class="proyecto-card"
-           (click)="openProject({
-          name: 'Proyecto 3',
-          meta: 'Interiorismo · 2022',
-          image: 'img/proyectos/3.png',
-          description: 'Proyecto de interiorismo con enfoque en iluminación y texturas.'
-        })">
+      <!-- 3. VILLA MONTECILLO -->
+      <article class="col-12 col-sm-6 col-lg-4">
+        <div class="proyecto-card"
+             (click)="openProject({
+        name: 'Villa Montecillo',
+        meta: 'Valencia · 2022',
+        image: 'img/proyectos/elmontecillo.jpg',
+        description: 'Diseño contemporáneo con estructura en hormigón visto y amplios ventanales panorámicos.',
+      })">
 
-        <img src="img/proyectos/3.png" class="proyecto-img" alt="Proyecto 3" />
-        <div class="proyecto-overlay">
-          <h2 class="proyecto-name">Proyecto 3</h2>
-          <p class="proyecto-meta">Interiorismo · 2022</p>
+          <img src="img/proyectos/elmontecillo.jpg" class="proyecto-img" alt="Villa Montecillo" />
+          <div class="proyecto-overlay">
+            <h2 class="proyecto-name">Villa Montecillo</h2>
+            <p class="proyecto-meta">Valencia · 2022</p>
+          </div>
+
         </div>
+      </article>
 
-      </div>
-    </article>
 
-    <!-- PROYECTO 4 -->
-    <article class="col-12 col-sm-6 col-lg-4">
-      <div class="proyecto-card"
-           (click)="openProject({
-          name: 'Proyecto 4',
-          meta: 'Vivienda · 2021',
-          image: 'img/proyectos/4.png',
-          description: 'Diseño residencial con líneas puras y volumetría marcada.'
-        })">
+      <!-- 4. RESIDENCIAL BENAGUACIL -->
+      <article class="col-12 col-sm-6 col-lg-4">
+        <div class="proyecto-card"
+             (click)="openProject({
+        name: 'Residencial Benaguacil',
+        meta: 'Valencia · 2023',
+        image: 'img/proyectos/4.png',
+        description: 'Edificio plurifamiliar de 12 viviendas con terrazas privadas y eficiencia energética A.',
+        surface: '1.850 m²',
+        type: 'Edificio residencial',
+        year: '2023'
+      })">
 
-        <img src="img/proyectos/4.png" class="proyecto-img" alt="Proyecto 4" />
-        <div class="proyecto-overlay">
-          <h2 class="proyecto-name">Proyecto 4</h2>
-          <p class="proyecto-meta">Vivienda · 2021</p>
+          <img src="img/proyectos/benaguacil.jpg" class="proyecto-img" alt="Residencial Benaguacil" />
+          <div class="proyecto-overlay">
+            <h2 class="proyecto-name">Residencial Benaguacil</h2>
+            <p class="proyecto-meta">Valencia · 2023</p>
+          </div>
+
         </div>
+      </article>
 
-      </div>
-    </article>
 
-    <!-- PROYECTO 5 -->
-    <article class="col-12 col-sm-6 col-lg-4">
-      <div class="proyecto-card"
-           (click)="openProject({
-          name: 'Proyecto 5',
-          meta: 'Obra nueva · 2020',
-          image: 'img/proyectos/5.png',
-          description: 'Proyecto de obra nueva con arquitectura abierta y luminosa.'
-        })">
+      <!-- 5. VILLA NOCTURNA MORAIRA -->
+      <article class="col-12 col-sm-6 col-lg-4">
+        <div class="proyecto-card"
+             (click)="openProject({
+    name: 'Villa Nocturna Moraira',
+    meta: 'Moraira · 2021',
+    image: 'img/proyectos/villanocturna.jpg',
+    description: 'Vivienda contemporánea de líneas puras y volumetría cúbica. El proyecto integra iluminación arquitectónica perimetral, piscina privada y una fuerte conexión entre interior y jardín.',
+    surface: '345 m²',
+    type: 'Vivienda unifamiliar de lujo',
+    year: '2021'
+  })">
 
-        <img src="img/proyectos/5.png" class="proyecto-img" alt="Proyecto 5" />
-        <div class="proyecto-overlay">
-          <h2 class="proyecto-name">Proyecto 5</h2>
-          <p class="proyecto-meta">Obra nueva · 2020</p>
+          <img src="img/proyectos/villanocturna.jpg"
+               class="proyecto-img"
+               alt="Villa Nocturna Moraira" />
+
+          <div class="proyecto-overlay">
+            <h2 class="proyecto-name">Villa Nocturna Moraira</h2>
+            <p class="proyecto-meta">Moraira · 2021</p>
+          </div>
+
         </div>
+      </article>
 
-      </div>
-    </article>
 
-    <!-- PROYECTO 6 -->
-    <article class="col-12 col-sm-6 col-lg-4">
-      <div class="proyecto-card"
-           (click)="openProject({
-          name: 'Proyecto 6',
-          meta: 'Paisajismo · 2019',
-          image: 'img/proyectos/6.png',
-          description: 'Proyecto de paisajismo integrando arquitectura y entorno natural.'
-        })">
+      <!-- 6. CASA BOSQUE -->
+      <article class="col-12 col-sm-6 col-lg-4">
+        <div class="proyecto-card"
+             (click)="openProject({
+        name: 'Casa Bosque',
+        meta: 'Castellón · 2020',
+        image: 'img/proyectos/6.png',
+        description: 'Proyecto integrado en entorno natural con fachada ventilada y materiales sostenibles.',
+        surface: '295 m²',
+        type: 'Vivienda sostenible',
+        year: '2020'
+      })">
 
-        <img src="img/proyectos/6.png" class="proyecto-img" alt="Proyecto 6" />
-        <div class="proyecto-overlay">
-          <h2 class="proyecto-name">Proyecto 6</h2>
-          <p class="proyecto-meta">Paisajismo · 2019</p>
+          <img src="img/proyectos/6.png" class="proyecto-img" alt="Casa Bosque" />
+          <div class="proyecto-overlay">
+            <h2 class="proyecto-name">Casa Bosque</h2>
+            <p class="proyecto-meta">Castellón · 2020</p>
+          </div>
+
         </div>
+      </article>
 
-      </div>
-    </article>
+    </section>
 
   </section>
 </main>

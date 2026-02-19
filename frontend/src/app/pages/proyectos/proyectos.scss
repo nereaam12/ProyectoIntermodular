@@ -6,7 +6,6 @@
 .page-logo-center {
   display: flex;
   justify-content: center;
-
 }
 
 .page-logo {
@@ -14,6 +13,7 @@
   width: auto;
 }
 
+/* HERO */
 .proyectos-hero {
   position: relative;
   border-bottom: 1px solid var(--color-border);
@@ -25,6 +25,7 @@
   padding: 100px 0;
 }
 
+/* TARJETA PROYECTO */
 .proyecto-card {
   position: relative;
   display: block;
@@ -41,13 +42,10 @@
     .proyecto-img {
       transform: scale(1.05);
     }
-
-    .proyecto-overlay {
-      opacity: 1;
-    }
   }
 }
 
+/* IMAGEN */
 .proyecto-img {
   width: 100%;
   height: 400px;
@@ -60,6 +58,7 @@
   backface-visibility: hidden;
 }
 
+/* OVERLAY SIEMPRE VISIBLE */
 .proyecto-overlay {
   position: absolute;
   inset: 0;
@@ -67,11 +66,15 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 26px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0) 60%);
-  opacity: 0;
-  transition: opacity 0.35s ease;
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.1) 70%
+  );
+  opacity: 1; /* 👈 Siempre visible */
 }
 
+/* TEXTO */
 .proyecto-name {
   font-size: 20px;
   font-weight: 400;
@@ -87,6 +90,8 @@
   color: rgba(255, 255, 255, 0.85);
   font-family: var(--font-mono);
 }
+
+/* VISTA DETALLE */
 .proyecto-detalle {
   position: fixed;
   inset: 0;
@@ -139,6 +144,7 @@
   opacity: 0.8;
 }
 
+/* BOTÓN CERRAR */
 .cerrar {
   position: fixed;
   top: 40px;
@@ -155,9 +161,18 @@
   opacity: 1;
 }
 
-
+/* RESPONSIVE */
 @media (max-width: 992px) {
   .proyecto-img {
     height: 300px;
+  }
+
+  .detalle-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .detalle-img img {
+    height: 50vh;
   }
 }

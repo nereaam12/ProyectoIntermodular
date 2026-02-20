@@ -86,14 +86,17 @@
       <div class="row g-4 align-items-stretch">
         <div class="col-lg-6">
           <a class="feature-card" routerLink="/estudio">
+            <div class="feature-img" style="position:relative; overflow: hidden;">
             <video
-              class="feature-img"
+              style="position: absolute; inset: 0; transform: scale(1.2); object-fit: cover; width: 100%;
+            }"
               autoplay
               muted
               loop
               playsinline>
               <source src="img/video/estudio.mp4" type="video/mp4">
             </video>
+            </div>
 
             <div class="feature-body">
               <h3 class="feature-title">Conoce el estudio</h3>

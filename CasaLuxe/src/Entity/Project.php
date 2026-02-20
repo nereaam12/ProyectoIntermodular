@@ -23,6 +23,9 @@ class Project
     #[ORM\Column(type: Types::TEXT)]
     private $image = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $pdfPath = null;
+
     #[ORM\ManyToOne(inversedBy: 'projects')]
     private ?User $user = null;
 
@@ -78,4 +81,17 @@ class Project
 
         return $this;
     }
+
+    public function getPdfPath(): ?string
+    {
+        return $this->pdfPath;
+    }
+
+    public function setPdfPath(?string $pdf): self
+    {
+        $this->pdfPath = $pdf;
+        return $this;
+    }
+
+
 }

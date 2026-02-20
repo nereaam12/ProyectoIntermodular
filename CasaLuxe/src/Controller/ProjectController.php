@@ -48,6 +48,21 @@ final class ProjectController extends AbstractController
                 }
                 $project->setImage($newFilename);
             }
+            // ===== PDF (añadido nuevo) =====
+            /** @var UploadedFile $pdf */
+            $pdf = $form->get('pdfFile')->getData();
+
+            if ($pdf) {
+                $newPdfFilename = uniqid() . '.' . $pdf->guessExtension();
+                try {
+                    $pdf->move(
+                        $this->getParameter('uploads_directory'),
+                        $newPdfFilename
+                    );
+                } catch (\Exception $e) {
+                }
+                $project->setPdfPath($newPdfFilename); // 👈 AQUÍ el cambio
+            }
 
             $entityManager->persist($project);
             $entityManager->flush();
@@ -76,6 +91,21 @@ final class ProjectController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // ===== PDF =====
+            /** @var UploadedFile $pdf */
+            $pdf = $form->get('pdfFile')->getData();
+
+            if ($pdf) {
+                $newPdfFilename = uniqid() . '.' . $pdf->guessExtension();
+                try {
+                    $pdf->move(
+                        $this->getParameter('uploads_directory'),
+                        $newPdfFilename
+                    );
+                } catch (\Exception $e) {
+                }
+                $project->setPdfPath($newPdfFilename);
+            }
             $entityManager->flush();
 
             return $this->redirectToRoute('app_project_index', [], Response::HTTP_SEE_OTHER);

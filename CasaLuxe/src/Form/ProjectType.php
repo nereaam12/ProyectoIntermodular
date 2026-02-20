@@ -27,7 +27,21 @@ class ProjectType extends AbstractType
                         'mimeTypesMessage' => 'Por favor sube una imagen válida',
                     ])
                 ],
-            ]);
+            ])
+        ->add('pdfFile', FileType::class, [
+        'label' => 'Subir PDF',
+        'mapped' => false, // 🔥 IMPORTANTE
+        'required' => false,
+        'constraints' => [
+            new File([
+                'maxSize' => '5M',
+                'mimeTypes' => [
+                    'application/pdf',
+                ],
+                'mimeTypesMessage' => 'Por favor sube un PDF válido',
+            ])
+        ],
+    ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

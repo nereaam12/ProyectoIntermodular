@@ -4,7 +4,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 9999;
+  pointer-events: none;
 }
 
 .lang {
@@ -19,6 +20,7 @@
   border-radius: 4px;
   padding: 6px 14px;
   transition: all 0.2s ease;
+  pointer-events: auto;
 
   &:hover {
     background: rgba(0, 0, 0, 0.5);
@@ -31,9 +33,10 @@
   top: 0;
   width: 100%;
   padding: 25px 40px;
-  z-index: 1000;
+  z-index: 1;
   background: transparent;
   transition: background 0.3s ease;
+  pointer-events: none;
 }
 
 /* Menu hamburguesa */
@@ -49,6 +52,7 @@
   gap: 6px;
   padding: 10px 8px;
   transition: all 0.2s ease;
+  pointer-events: auto;
 
   &:hover {
     background: rgba(0, 0, 0, 0.5);
@@ -71,6 +75,7 @@
   background: rgba(0, 0, 0, 0.25);
   z-index: 2000;
   animation: fadeIn 0.3s ease;
+  pointer-events: auto;
 }
 
 /* Menu Overlay */
@@ -90,6 +95,7 @@
   box-shadow: -30px 0 60px rgba(0, 0, 0, 0.12);
   z-index: 2050;
   animation: slideIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: auto;
 }
 
 .menu-close {

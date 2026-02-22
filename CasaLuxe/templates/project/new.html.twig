@@ -3,31 +3,9 @@
 {% block title %}New Project{% endblock %}
 
 {% block body %}
-    <div class="project-page py-5">
-        <div class="container">
+    <h1>Create new Project</h1>
 
-            <div class="mb-4">
-                <h1 class="project-title text-uppercase">
-                    Create Project
-                </h1>
-                <p class="project-subtitle text-uppercase">
-                    Add a new project to the portfolio
-                </p>
-            </div>
+    {{ include('project/_form.html.twig') }}
 
-            <div class="project-card">
-
-                {{ include('project/_form.html.twig') }}
-
-                <div class="mt-4">
-                    <a href="{{ path('app_project_index') }}"
-                       class="btn btn-outline-project text-uppercase">
-                        Back to list
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
+    <a href="{{ path('app_project_index') }}">back to list</a>
 {% endblock %}

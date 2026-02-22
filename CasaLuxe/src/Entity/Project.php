@@ -29,6 +29,12 @@ class Project
     #[ORM\ManyToOne(inversedBy: 'projects')]
     private ?User $user = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $location = null;
+
+    #[ORM\Column]
+    private ?int $year = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,7 +81,7 @@ class Project
         return $this->user;
     }
 
-    public function setUsers(?User $user): static
+    public function setUser(?User $user): static
     {
         $this->user = $user;
 
@@ -90,6 +96,30 @@ class Project
     public function setPdfPath(?string $pdf): self
     {
         $this->pdfPath = $pdf;
+        return $this;
+    }
+
+    public function getLocation(): ?string
+    {
+        return $this->location;
+    }
+
+    public function setLocation(string $location): static
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    public function getYear(): ?int
+    {
+        return $this->year;
+    }
+
+    public function setYear(int $year): static
+    {
+        $this->year = $year;
+
         return $this;
     }
 

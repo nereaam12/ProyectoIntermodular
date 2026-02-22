@@ -100,3 +100,13 @@
 .btn-dark-elegant:hover {
     background: #bfa27a;
 }
+
+.user-link {
+    color: #bfa27a;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.user-link:hover {
+    color: #111;
+}

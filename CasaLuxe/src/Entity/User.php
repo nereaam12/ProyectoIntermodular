@@ -183,7 +183,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->projects->contains($project)) {
             $this->projects->add($project);
-            $project->setUsers($this);
+            $project->setUser($this);
         }
 
         return $this;

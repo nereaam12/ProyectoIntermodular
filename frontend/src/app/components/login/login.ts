@@ -7,7 +7,7 @@ import { AuthService } from '../../services/auth';
   selector: 'app-login',
   imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.html',
-  styleUrl: './login.scss',
+  styleUrls: ['./login.scss'],
 })
 export class Login {
   private authService = inject(AuthService);
@@ -24,8 +24,9 @@ export class Login {
     const data = this.reactiveForm.getRawValue();
 
     this.authService.login(data.email, data.password).subscribe({
-      next: () => {
+      next: (response) => {
         // Redirigir al backend Twig
+        this.authService.saveToken(response.token);
         window.location.href = 'http://localhost:8000/user';
       },
       error: () => {

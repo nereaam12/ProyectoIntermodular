@@ -40,7 +40,7 @@ public function login(Request $request, UserRepository $userRepository, UserPass
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): RedirectResponse
     {
-        $response = new RedirectResponse('http://localhost:4200'); // índice Angular
+        $response = new RedirectResponse('http://localhost:4200');
         $response->headers->clearCookie('BEARER', '/', null, false, false, false, 'Lax');
 
         return $response;

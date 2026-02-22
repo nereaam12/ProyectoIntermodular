@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 
 @Injectable({
@@ -34,5 +34,22 @@ export class AuthService {
   // Comprobar si está logueado
   isLoggedIn(): boolean {
     return document.cookie.includes('BEARER=');
+  }
+
+  // Obtener token
+  getToken(): string|null {
+    return localStorage.getItem('jwt_token');
+  }
+
+  // Crear headers con el token para peticiones autenticadas
+  getAuthHeaders(): HttpHeaders {
+    const token = this.getToken();
+    return new HttpHeaders({
+      'Authorization': `Bearer ${token ?? ''}`
+    });
+  }
+
+  saveToken(token: string): void {
+    localStorage.setItem('jwt_token', token);
   }
 }

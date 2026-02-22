@@ -37,7 +37,7 @@ class ProjectType extends AbstractType
                 'required' => false,
                 'constraints' => [
                     new File([
-                        'maxSize' => '5M',
+                        'maxSize' => '30M',
                         'mimeTypes' => [
                             'application/pdf',
                         ],

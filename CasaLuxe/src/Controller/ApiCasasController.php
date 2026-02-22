@@ -23,6 +23,17 @@ class ApiCasasController extends AbstractController
                 'title' => $project->getTitle(),
                 'description' => $project->getDescription(),
                 'image' => $project->getImage(),
+                'pdfPath' => $project->getPdfPath(),
+                'user' => [
+                    'id' => $project->getUser()->getId(),
+                    'name' => $project->getUser()->getName(),
+                    'surname' => $project->getUser()->getSurname(),
+                    'email' => $project->getUser()->getEmail(),
+                    'telephone' => $project->getUser()->getTelephone(),
+
+                ],
+                'location' => $project->getLocation(),
+                'year' => $project->getYear(),
             ];
         }
 

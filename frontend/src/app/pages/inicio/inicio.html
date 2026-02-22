@@ -86,16 +86,21 @@
       <div class="row g-4 align-items-stretch">
         <div class="col-lg-6">
           <a class="feature-card" routerLink="/estudio">
-            <div class="feature-img" style="position:relative; overflow: hidden;">
-            <video
-              style="position: absolute; inset: 0; transform: scale(1.2); object-fit: cover; width: 100%;
-            }"
-              autoplay
-              muted
-              loop
-              playsinline>
-              <source src="img/video/estudio.mp4" type="video/mp4">
-            </video>
+            <div class="feature-img" style="position: relative; overflow: hidden">
+              <video
+                style="
+                  position: absolute;
+                  inset: 0;
+                  transform: scale(1.2);
+                  object-fit: cover;
+                  width: 100%;
+                "
+                [autoplay]="true"
+                [muted]="true"
+                [loop]="true"
+              >
+                <source src="img/video/estudio.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <div class="feature-body">
@@ -109,25 +114,13 @@
         <div class="col-lg-6">
           <div class="row g-4">
             <div class="col-6">
-              <img
-                src="img/inicio/imagenestudio1.png"
-                class="grid-img"
-                alt=""
-              />
+              <img src="img/inicio/imagenestudio1.png" class="grid-img" alt="" />
             </div>
             <div class="col-6">
-              <img
-                src="img/logoRuiz.png"
-                class="grid-img"
-                alt=""
-              />
+              <img src="img/logoRuiz.png" class="grid-img" alt="" />
             </div>
             <div class="col-12">
-              <img
-                src="img/inicio/inicioestudio2.png"
-                class="grid-img grid-img-wide"
-                alt=""
-              />
+              <img src="img/inicio/inicioestudio2.png" class="grid-img grid-img-wide" alt="" />
             </div>
           </div>
         </div>
@@ -146,11 +139,7 @@
       <div class="row g-4">
         <div class="col-lg-4 col-md-6">
           <a class="news-card" routerLink="/novedades">
-            <img
-              src="img/noticias/noticia1.jpg"
-              class="news-img"
-              alt=""
-            />
+            <img src="img/noticias/noticia1.jpg" class="news-img" alt="" />
             <div class="news-body">
               <p class="news-kicker">Actualidad</p>
               <h3 class="news-title">Nueva entrega de proyecto</h3>
@@ -161,11 +150,7 @@
 
         <div class="col-lg-4 col-md-6">
           <a class="news-card" routerLink="/novedades">
-            <img
-              src="img/noticias/javeacard.jpg"
-              class="news-img"
-              alt=""
-            />
+            <img src="img/noticias/javeacard.jpg" class="news-img" alt="" />
             <div class="news-body">
               <p class="news-kicker">Obra</p>
               <h3 class="news-title">Residencial Jávea Hills Finalizado</h3>

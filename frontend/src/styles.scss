@@ -96,6 +96,40 @@ img {
   }
 }
 
+/* Botón compartido (novedades, modal, etc.) */
+.decoration {
+  background: var(--color-accent);
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 10px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+}
+
+/* Logo compartido entre páginas */
+.page-logo-center {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.page-logo {
+  height: 100px;
+  width: auto;
+  pointer-events: auto;
+}
+
 /* Scrollbar elegante */
 ::-webkit-scrollbar {
   width: 6px;

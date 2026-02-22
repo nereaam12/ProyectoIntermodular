@@ -2,21 +2,6 @@
   display: block;
 }
 
-/* LOGO */
-.page-logo-center {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.page-logo {
-  height: 100px;
-  width: auto;
-  pointer-events: auto;
-}
-
 /* HERO */
 .contacto-hero {
   margin-top: 20px;

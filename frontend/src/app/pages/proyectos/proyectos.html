@@ -169,19 +169,21 @@
 </main>
 
 <!-- VISTA DETALLE -->
-<section class="proyecto-detalle" *ngIf="selectedProject">
-  <div class="detalle-container">
-    <div class="detalle-img">
-      <img [src]="selectedProject.image" [alt]="selectedProject.name" />
-    </div>
+@if (selectedProject) {
+  <section class="proyecto-detalle">
+    <div class="detalle-container">
+      <div class="detalle-img">
+        <img [src]="selectedProject.image" [alt]="selectedProject.name" />
+      </div>
 
-    <div class="detalle-info">
-      <button class="cerrar" (click)="closeProject()">✕</button>
-      <h2>{{ selectedProject.name }}</h2>
-      <p class="meta">{{ selectedProject.meta }}</p>
-      <p class="descripcion">
-        {{ selectedProject.description }}
-      </p>
+      <div class="detalle-info">
+        <button class="cerrar" (click)="closeProject()">✕</button>
+        <h2>{{ selectedProject.name }}</h2>
+        <p class="meta">{{ selectedProject.meta }}</p>
+        <p class="descripcion">
+          {{ selectedProject.description }}
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+}

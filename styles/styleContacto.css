@@ -1,0 +1,379 @@
+/* =====================
+   RESET
+===================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: #111;
+    background: #fff;
+}
+
+
+/* =====================
+   TOPBAR (IGUAL QUE ESTUDIO)
+===================== */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 40px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    background: #fff;
+    z-index: 100;
+}
+
+
+/* =====================
+   NAVBAR BASE
+===================== */
+
+.navbar {
+    background: transparent;
+    z-index: 2000;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+/* =====================
+   OVERLAY MENU (IGUAL QUE ESTUDIO)
+===================== */
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto !important;
+
+    height: 100vh;
+    width: 40vw;
+    max-width: 520px;
+
+    background: rgba(240, 240, 240, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-right: 80px;
+
+    box-shadow: -30px 0 60px rgba(0,0,0,0.12);
+    z-index: 2050;
+}
+
+.menu-close {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #222;
+    cursor: pointer;
+}
+
+.menu-overlay-list {
+    gap: 16px;
+}
+
+.menu-overlay .nav-link {
+    font-size: 38px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    color: #222;
+    text-transform: uppercase;
+}
+
+.menu-overlay .nav-link:hover {
+    opacity: 0.6;
+}
+
+.menu-overlay-footer {
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    text-align: right;
+}
+
+.menu-overlay-footer p {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #777;
+    margin: 4px 0;
+}
+
+
+/* =====================
+   HERO
+===================== */
+
+.contacto-hero {
+    margin-top: 80px;   /* espacio para topbar fija */
+    border-bottom: 1px solid #bfa27a; 
+    padding: 50px 0 25px;
+}
+
+.contacto-title {
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+.contacto-subtitle {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #777;
+    margin-top: 12px;
+}
+
+
+/* =====================
+   MAIN LAYOUT
+===================== */
+
+.contacto-main {
+    padding: 80px 0;
+}
+
+.contacto-row {
+    position: relative;
+}
+
+.contacto-row::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: #bfa27a;
+    transform: translateX(-50%);
+}
+
+.contacto-col-left {
+    padding-right: 70px;
+}
+
+.contacto-col-right {
+    padding-left: 70px;
+}
+
+
+/* =====================
+   FORMULARIO
+===================== */
+
+.form-label {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.custom-input {
+    border: none;
+    border-bottom: 1px solid #e6e6e6;
+    border-radius: 0;
+    padding-left: 0;
+    padding-bottom: 8px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    border-bottom: 1px solid #bfa27a;
+    box-shadow: none;
+}
+
+textarea.custom-input {
+    resize: none;
+}
+
+.custom-btn {
+    margin-top: 25px;
+    padding: 12px 40px;
+    background: #bfa27a;
+    color: #fff;
+    border: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    background: #111;
+    color: #fff;
+}
+
+
+/* =====================
+   INFORMACIÓN
+===================== */
+
+.contacto-info h4 {
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.contacto-info p {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.contacto-map iframe {
+    width: 100%;
+    height: 240px;
+    border: none;
+}
+
+
+/* ==================================================
+   FOOTER (IGUAL QUE PROYECTOS)
+================================================== */
+
+.site-footer {
+    border-top: 1px solid #bfa27a;
+    background: #f5f1ea;
+    padding: 90px 0 35px;
+    margin-top: 140px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin-bottom: 60px;
+  }
+  
+  .footer-block h5 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 14px;
+  }
+  
+  .footer-block h5::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: #bfa27a;
+  }
+  
+  .footer-block p {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.8;
+  }
+  
+  .footer-block:first-child p {
+    max-width: 280px;
+  }
+  
+  .footer-social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 10px;
+  }
+  
+  .footer-social-icons a {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    transition: all .3s ease;
+  }
+  
+  .footer-social-icons a:hover {
+    border-color: #bfa27a;
+    color: #bfa27a;
+    transform: translateY(-4px);
+  }
+  
+  .footer-map {
+    margin-top: 20px;
+    border: 1px solid #e8e2d8;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  }
+  
+  .footer-map iframe {
+    width: 100%;
+    height: 190px;
+    border: 0;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #bfa27a;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #777;
+  }
+  
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  }
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media (max-width: 992px) {
+
+    .menu-overlay {
+        width: 80vw;
+        padding-right: 30px;
+    }
+
+    .menu-overlay .nav-link {
+        font-size: 28px;
+    }
+
+    .menu-overlay-footer {
+        right: 30px;
+        bottom: 30px;
+    }
+
+    .contacto-row::before {
+        display: none;
+    }
+
+    .contacto-col-left,
+    .contacto-col-right {
+        padding: 0;
+    }
+}

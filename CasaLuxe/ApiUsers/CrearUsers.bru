@@ -1,0 +1,26 @@
+meta {
+  name: CrearUsers
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8030/api/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "marope01@alumnatflorida.es",
+    "password": "323456",
+    "telephone": "123876789",
+    "name": "Marcos",
+    "surname": "Rodriguez"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

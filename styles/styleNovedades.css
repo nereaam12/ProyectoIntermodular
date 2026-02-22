@@ -1,0 +1,341 @@
+/* =====================
+   RESET
+===================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter', sans-serif;
+  font-weight:300;
+  background:#fff;
+  color:#111;
+}
+
+
+/* =====================
+   TITULOS
+===================== */
+
+.titles{
+  font-weight:400;
+  letter-spacing:3px;
+}
+
+.subtitles{
+  font-size:14px;
+  letter-spacing:1.5px;
+  color:#777;
+}
+
+
+/* =====================
+   HEADER (IGUAL QUE RESTO WEB)
+===================== */
+
+.topbar-index{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  padding:25px 40px;
+  z-index:1000;
+}
+
+.lang{
+  font-size:12px;
+  letter-spacing:1.5px;
+}
+
+
+/* =====================
+   HAMBURGUESA
+===================== */
+
+.custom-toggler{
+  border:none;
+}
+
+.custom-toggler:focus{
+  box-shadow:none;
+}
+
+.custom-toggler .navbar-toggler-icon{
+  width:30px;
+  height:24px;
+  background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='black' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:30px 24px;
+}
+
+
+/* =====================
+   OVERLAY MENU
+===================== */
+
+.menu-overlay{
+  position:fixed;
+  top:0;
+  right:0;
+  height:100vh;
+  width:40vw;
+  max-width:520px;
+  background:rgba(240,240,240,0.92);
+  backdrop-filter:blur(8px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-right:80px;
+  box-shadow:-30px 0 60px rgba(0,0,0,0.12);
+  z-index:2050;
+}
+
+.menu-close{
+  position:absolute;
+  top:32px;
+  left:32px;
+  font-size:20px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.menu-overlay-list{
+  list-style:none;
+}
+
+.menu-overlay-list li{
+  margin-bottom:28px;
+}
+
+.menu-overlay-list a{
+  font-size:38px;
+  font-weight:300;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:#111;
+}
+
+.menu-overlay-list a:hover{
+  opacity:0.6;
+}
+
+.menu-overlay-footer{
+  position:absolute;
+  bottom:40px;
+  right:80px;
+  font-size:11px;
+  letter-spacing:1.5px;
+  color:#777;
+}
+
+
+/* =====================
+   HERO TITULO
+===================== */
+
+main h1{
+  margin-top:120px;
+}
+
+.color-border{
+  border-bottom:1px solid #bfa27a;
+}
+
+
+/* =====================
+   JUMBOTRON
+===================== */
+
+.jumbotron{
+  background-image:url("../img/proyectos/2.png");
+  background-size:cover;
+  background-position:center;
+  height:420px;
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.glass{
+  background:rgba(0,0,0,0.45);
+  color:#fff;
+  backdrop-filter:blur(3px);
+}
+
+
+/* =====================
+   BOTONES
+===================== */
+
+.btn-outline-light{
+  background:#bfa27a;
+  border:none;
+  color:#fff;
+  font-size:12px;
+  letter-spacing:2px;
+  padding:10px 28px;
+}
+
+.btn-outline-light:hover{
+  background:#111;
+  color:#fff;
+}
+
+
+/* =====================
+   CARDS
+===================== */
+
+.card{
+  border:none;
+  border-radius:0;
+  box-shadow:none;
+  transition:all 0.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.card-img-top{
+  border-radius:0;
+}
+
+.card-title{
+  font-weight:500;
+  letter-spacing:1px;
+}
+
+.card-footer{
+  background:none;
+  border-top:1px solid #eee;
+  font-size:12px;
+  color:#777;
+}
+
+
+/* ==================================================
+   FOOTER (IGUAL QUE PROYECTOS)
+================================================== */
+
+.site-footer {
+  border-top: 1px solid #bfa27a;
+  background: #f5f1ea;
+  padding: 90px 0 35px;
+  margin-top: 140px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin-bottom: 60px;
+}
+
+.footer-block h5 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.footer-block h5::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background: #bfa27a;
+}
+
+.footer-block p {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.footer-social-icons a {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #333;
+  transition: all .3s ease;
+}
+
+.footer-social-icons a:hover {
+  border-color: #bfa27a;
+  color: #bfa27a;
+  transform: translateY(-4px);
+}
+
+.footer-map {
+  margin-top: 20px;
+  border: 1px solid #e8e2d8;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.footer-map iframe {
+  width: 100%;
+  height: 190px;
+  border: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid #bfa27a;
+  padding-top: 25px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #777;
+}
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media(max-width:992px){
+
+  .menu-overlay{
+    width:80vw;
+    padding:0 40px;
+  }
+
+  .menu-overlay-list a{
+    font-size:28px;
+  }
+
+  main h1{
+    margin-top:100px;
+  }
+
+}

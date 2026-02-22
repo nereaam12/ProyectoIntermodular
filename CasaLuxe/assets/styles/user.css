@@ -1,0 +1,112 @@
+/* =================================
+   USER ADMIN STYLE (ELEGANTE)
+================================= */
+
+.user-page {
+    background: #f5f1ea;
+    min-height: 100vh;
+}
+
+/* TÍTULOS */
+
+.admin-title {
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.admin-subtitle {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: #777;
+}
+
+/* BOTÓN PRINCIPAL */
+
+.btn-admin {
+    background: #111;
+    color: #fff;
+    border-radius: 0;
+    padding: 10px 22px;
+    letter-spacing: 1px;
+    transition: all .3s ease;
+}
+
+.btn-admin:hover {
+    background: #bfa27a;
+    color: #fff;
+}
+
+/* CARD */
+
+.admin-card {
+    background: #ffffff;
+    border: 1px solid #e8e2d8;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.05);
+}
+
+/* TABLA */
+
+.table thead {
+    background: #f8f5f0;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.table tbody tr {
+    transition: background .3s ease;
+}
+
+.table tbody tr:hover {
+    background: #faf7f2;
+}
+
+/* BADGES */
+
+.badge-admin {
+    background: #111;
+    color: white;
+    padding: 6px 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.badge-user {
+    background: #bfa27a;
+    color: white;
+    padding: 6px 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* BOTONES SECUNDARIOS */
+
+.btn-outline-elegant {
+    border: 1px solid #bfa27a;
+    color: #bfa27a;
+    border-radius: 0;
+}
+
+.btn-outline-elegant:hover {
+    background: #bfa27a;
+    color: white;
+}
+
+.btn-dark-elegant {
+    background: #111;
+    color: white;
+    border-radius: 0;
+}
+
+.btn-dark-elegant:hover {
+    background: #bfa27a;
+}
+
+.user-link {
+    color: #bfa27a;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.user-link:hover {
+    color: #111;
+}

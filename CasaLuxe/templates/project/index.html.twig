@@ -30,6 +30,7 @@
                     <th>Título</th>
                     <th>Descripción</th>
                     <th>Imagen</th>
+                    <th>Estado</th>
                     <th>PDF</th>
                     <th>Usuario</th>
                     <th>Ubicación</th>
@@ -52,7 +53,7 @@
                                 <img src="{{ asset('uploads/' ~ project.image) }}" class="project-img">
                             {% endif %}
                         </td>
-
+                        <td>{{ project.state }}</td>
                         <td>
                             {% if project.pdfPath %}
                                 <a href="{{ asset('uploads/' ~ project.pdfPath) }}"

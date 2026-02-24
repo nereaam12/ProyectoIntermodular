@@ -1,5 +1,4 @@
-import { Component, inject  } from '@angular/core';
-
+import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Projects } from '../../services/projects';
 
 @Component({
@@ -8,15 +7,17 @@ import { Projects } from '../../services/projects';
   templateUrl: './proyectos.html',
   styleUrl: './proyectos.scss',
 })
-export class Proyectos  {
+export class Proyectos implements OnInit {
 
   public data = inject(Projects);
+  public cdr = inject(ChangeDetectorRef);
 
   public projects: any[] = [];
   selectedProject: any = null;
 
-
-  // Se ejecuta automáticamente al cargar la página
+  ngOnInit(): void {
+    this.loadProjects();
+  }
 
   openProject(project: any) {
     this.selectedProject = project;
@@ -28,13 +29,15 @@ export class Proyectos  {
 
   public loadProjects(): void {
     this.data.getData().subscribe((response) => {
+      console.log('Respuesta:', response);
       this.projects = response.map(project => ({
         name: project.title,
         description: project.description,
-        image: 'http://localhost:8000/uploads/' + project.image, // <-- URL completa
+        image: 'http://localhost:8000/uploads/' + project.image,
         year: project.year.toString(),
         location: project.location
       }));
+      this.cdr.markForCheck();
     });
   }
 }

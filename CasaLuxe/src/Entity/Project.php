@@ -35,6 +35,9 @@ class Project
     #[ORM\Column]
     private ?int $year = null;
 
+    #[ORM\Column]
+    private ?bool $state = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -119,6 +122,18 @@ class Project
     public function setYear(int $year): static
     {
         $this->year = $year;
+
+        return $this;
+    }
+
+    public function isState(): ?bool
+    {
+        return $this->state;
+    }
+
+    public function setState(bool $state): static
+    {
+        $this->state = $state;
 
         return $this;
     }

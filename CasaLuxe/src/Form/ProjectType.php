@@ -6,11 +6,13 @@ use App\Entity\Project;
 use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class ProjectType extends AbstractType
 {
@@ -45,13 +47,20 @@ class ProjectType extends AbstractType
                     ])
                 ],
             ])
-            ->add('user', EntityType::class, [
+        ->add('user', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => 'name',
                 'label' => 'Usuario'
             ])
-            ->add('location', TextType::class, ['label' => 'Ubicación'])
-            ->add('year', TextType::class, ['label' => 'Año']);
+        ->add('location', TextType::class, ['label' => 'Ubicación'])
+        ->add('year', TextType::class, ['label' => 'Año'])
+            ->add('state', ChoiceType::class, [
+                'label' => 'Estado',
+                'choices' => [
+                    'Terminado' => true,
+                    'En proceso' => false,
+                ],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

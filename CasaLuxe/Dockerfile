@@ -1,56 +1,50 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.3-fpm
 
-# Instalar dependencias del sistema
-RUN apk add --no-cache \
-    nginx \
-    supervisor \
-    icu-dev \
-    oniguruma-dev \
+RUN apt-get update && apt-get install -y \
     libzip-dev \
-    zip \
+    libicu-dev \
+    libonig-dev \
+    libxml2-dev \
+    libxslt-dev \
     unzip \
-    openssl
+    git \
+    nginx \
+    gettext-base \
+    && rm -rf /var/lib/apt/lists/*
 
-# Instalar extensiones PHP
 RUN docker-php-ext-install \
+    pdo \
     pdo_mysql \
+    mbstring \
     intl \
-    zip \
     opcache \
-    bcmath
+    zip \
+    xml \
+    simplexml
 
-# Instalar Composer
+RUN php -m | grep pdo_mysql
+
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Directorio de trabajo
-WORKDIR /var/www/html
+WORKDIR /app
 
-# Copiar archivos del proyecto
+# Copiar solo composer.json primero para aprovechar caché de Docker
+COPY composer.json composer.lock ./
+
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
+
+# Copiar el resto del proyecto
 COPY . .
 
-# Instalar dependencias de Composer en modo producción
-RUN composer install \
-    --no-dev \
-    --optimize-autoloader \
-    --no-interaction \
-    --no-progress
+# Ejecutar scripts post-install ahora que el código está disponible
+RUN composer run-script post-install-cmd --no-interaction || true
 
-# Generar claves JWT (las crea en tiempo de build)
-RUN mkdir -p config/jwt && \
-    openssl genrsa -out config/jwt/private.pem -aes256 -passout env:JWT_PASSPHRASE 4096 && \
-    openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem \
-    -passin env:JWT_PASSPHRASE
+RUN mkdir -p var/cache var/log && chown -R www-data:www-data var public
 
-# Dar permisos a var/
-RUN mkdir -p var/cache var/log && \
-    chmod -R 777 var/
-
-# Configurar Nginx
-COPY docker/nginx.conf /etc/nginx/nginx.conf
-
-# Configurar Supervisor (gestiona nginx + php-fpm juntos)
-COPY docker/supervisord.conf /etc/supervisord.conf
+COPY docker/nginx.conf /etc/nginx/sites-available/default
+COPY railway-start.sh /railway-start.sh
+RUN chmod +x /railway-start.sh
 
 EXPOSE 80
-
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+COPY docker/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
+CMD ["/railway-start.sh"]

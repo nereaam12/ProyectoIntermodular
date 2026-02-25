@@ -10,7 +10,7 @@ import { AuthService } from './auth';
 export class Projects {
   private http = inject(HttpClient);
   private auth = inject(AuthService);
-  private apiUrl = 'http://localhost:8000/api';
+  private apiUrl = 'https://proyectointermodular-production-0233.up.railway.app/api';
   public getData(): Observable<Response[]> {
     return this.http.get<Response[]>(`${this.apiUrl}/projects`, {
       headers: this.auth.getAuthHeaders(), // ✅ enviamos token

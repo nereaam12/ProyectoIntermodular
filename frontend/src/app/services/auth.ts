@@ -7,7 +7,7 @@ import { Observable, tap } from 'rxjs';
 })
 export class AuthService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:8000/api';
+  private apiUrl = 'https://proyectointermodular-production-0233.up.railway.app/api';
 
   // Registro de usuario
   register(email: string, password: string): Observable<any> {

@@ -27,7 +27,7 @@ export class Login {
       next: (response) => {
         // Redirigir al backend Twig
         this.authService.saveToken(response.token);
-        window.location.href = 'http://localhost:8000/user';
+        window.location.href = 'https://proyectointermodular-production-0233.up.railway.app/user';
       },
       error: () => {
         this.errorMessage = 'Email o contraseña incorrectos';

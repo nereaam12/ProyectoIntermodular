@@ -33,7 +33,7 @@ export class Proyectos implements OnInit {
       this.projects = response.map(project => ({
         name: project.title,
         description: project.description,
-        image: 'http://localhost:8000/uploads/' + project.image,
+        image: 'https://proyectointermodular-production-0233.up.railway.app/uploads/' + project.image,
         year: project.year.toString(),
         location: project.location
       }));

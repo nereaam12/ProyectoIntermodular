@@ -1,12 +1,16 @@
 doctrine:
     dbal:
         url: '%env(resolve:DATABASE_URL)%'
+        host: '%env(resolve:MYSQLHOST)%'
+        port: '%env(resolve:MYSQLPORT)%'
+        driver: 'pdo_mysql'
 
+        profiling_collect_backtrace: '%kernel.debug%'
         # IMPORTANT: You MUST configure your server version,
         # either here or in the DATABASE_URL env var (see .env file)
         #server_version: '16'
 
-        profiling_collect_backtrace: '%kernel.debug%'
+
         use_savepoints: true
     orm:
         auto_generate_proxy_classes: true
